@@ -1,6 +1,6 @@
 /* Service Worker — beste-liste
    Update: VERSION hochzählen, dann index.html hochladen. */
-const VERSION = 'beste-liste-v3';
+const VERSION = 'beste-liste-v5';
 const CORE = [
   './',
   './index.html',
@@ -31,6 +31,8 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
+  // Update-Check immer live: version.json und alles mit ?u= gehen am Cache vorbei
+  if (url.pathname.endsWith('/version.json') || url.searchParams.has('u')) return;
 
   // HTML: erst Netz (neue Version sofort), dann Cache
   if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
