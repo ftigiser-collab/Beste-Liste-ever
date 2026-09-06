@@ -1,6 +1,6 @@
 /* Service Worker — beste-liste
    Update: VERSION hochzählen, dann index.html hochladen. */
-const VERSION = 'beste-liste-v1';
+const VERSION = 'beste-liste-v3';
 const CORE = [
   './',
   './index.html',
