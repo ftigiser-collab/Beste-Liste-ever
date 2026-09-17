@@ -230,18 +230,20 @@ main{flex:1;padding:16px;max-width:1440px;width:100%;margin:0 auto}
 /* Druck */
 .druck-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
 .paper{background:#fff;color:#111;max-width:210mm;margin:0 auto;padding:14mm 14mm 16mm;border-radius:4px;box-shadow:0 10px 40px rgba(0,0,0,.5);
-  font:10.5pt/1.32 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}
-.paper h1{font-size:15pt;margin:0;font-weight:700}
+  font:8pt/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}
+.paper h1{font-size:13pt;margin:0;font-weight:700}
 .ph{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5pt solid #111;padding-bottom:4pt;margin-bottom:8pt}
 .ph .meta{color:#444;font-size:9.5pt}
 .pnote{border:1pt solid #999;padding:4pt 6pt;margin-bottom:8pt;background:#f5f5f5}
-.pp{border-top:1pt solid #bbb;padding:6pt 0 7pt;break-inside:avoid;page-break-inside:avoid}
-.pp-h{display:flex;gap:8pt;align-items:baseline;flex-wrap:wrap;margin-bottom:3pt}
+.pp{border:1.2pt solid #111;border-radius:3pt;padding:4pt 6pt 4pt;margin-bottom:5pt;break-inside:avoid;page-break-inside:avoid}
+.pp:last-of-type{margin-bottom:0}
+.pp-h{border-bottom:.8pt solid #333;padding-bottom:2pt}
+.pp-h{display:flex;gap:7pt;align-items:baseline;flex-wrap:wrap;margin-bottom:3pt}
 .pp-h .zi{font-weight:700;border:1.2pt solid #111;padding:0 5pt;border-radius:3pt}
-.pp-h .nm{font-weight:700;font-size:11.5pt}
+.pp-h .nm{font-weight:700;font-size:10.5pt}
 .pp-h .tg{color:#555;font-size:9.5pt}
 .pp-h .ve{color:#333;font-size:9.5pt;flex-basis:100%}
-.pr{display:grid;grid-template-columns:62pt 1fr;gap:6pt;padding:1.5pt 0}
+.pr{display:grid;grid-template-columns:58pt 1fr;gap:5pt;padding:.8pt 0}
 .pr .l{color:#666;font-size:9pt;padding-top:1pt}
 .pr .v{min-width:0}
 .pk .sp{color:#888;padding:0 3pt}
@@ -257,7 +259,7 @@ main{flex:1;padding:16px;max-width:1440px;width:100%;margin:0 auto}
 .pl .d{color:#888;text-decoration:line-through}
 .pl .d::before{content:"☑ "}
 .pl span{margin-right:10pt;display:inline-block}
-.psys{margin-top:3pt;border-top:.5pt dotted #bbb;padding-top:3pt;display:grid;grid-template-columns:1fr 1fr;gap:0 12pt}
+.psys{margin-top:2pt;border-top:.5pt dotted #bbb;padding-top:2pt;display:grid;grid-template-columns:1fr 1fr;gap:0 12pt}
 .psys .pr{grid-template-columns:52pt 1fr}
 .psys .pr.f-auff .l{color:#a86b00;font-weight:600}
 .psys .pr.f-hot .l{color:#b00020;font-weight:700}
@@ -346,9 +348,8 @@ input.labinput{max-width:280px}
 
 /* Druck */
 .plab{display:block;margin-top:1pt;color:#333;font-size:9pt}
-.plab .pl1{margin-right:8pt;white-space:nowrap}
-.plab .pl1.imp{font-weight:700}
-.plab .pl1.imp::before{content:"★ "}
+.plab .pl1{display:inline-block;margin-right:8pt;white-space:nowrap;font-size:8.5pt;color:#444}
+.plab .pl1.imp{font-weight:700;font-size:10pt;color:#000}
 .plab .sp{color:#999;padding:0 1pt}
 .plab .n{border-bottom:1pt solid #000}
 .plab .tr{font-weight:700}
@@ -542,6 +543,40 @@ html[data-theme="light"] .sysbadge{color:#fff}
 .sysbadge .emo,.sd .emo{font-size:11px;margin-right:4px;line-height:1}
 .psys .l .emo{margin-right:2pt}
 
+/* Laborfavoriten */
+.gtab.fav{color:var(--amb)}
+.gtab.fav.on{border-bottom-color:var(--amb)}
+.labgroup.favcol{grid-column:1 / -1;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:2px}
+.labgroup.favcol .labgroup-h{color:var(--amb)}
+@media (min-width:561px){.labgroup.favcol{column-count:2;column-gap:18px}.labgroup.favcol .labgroup-h{column-span:all}}
+
+/* Tageseintrag */
+.tagesnotiz{margin-bottom:16px;border-color:rgba(46,230,166,.45)}
+.tagtext{min-height:96px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+
+/* Scores */
+.scoremodal{width:min(860px,100%)}
+.scbox{border:1px solid var(--line2);border-radius:12px;padding:10px 12px;background:var(--surf)}
+.scbox-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.sctotal{font-size:14px;color:var(--mut)}
+.sctotal.r-mittel{color:var(--amb)} .sctotal.r-hoch{color:var(--red)} .sctotal.r-niedrig{color:var(--grn)}
+.scgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.scf{display:flex;flex-direction:column;gap:4px;min-width:0}
+.scf.wide{grid-column:span 2}
+.scl{color:var(--mut);font-size:12px}
+.scl .unit{color:var(--dim);margin-left:4px}
+.scf select{min-height:44px;border-radius:10px;border:1px solid var(--line2);background:var(--bg);padding:0 10px}
+.scparts{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;padding-top:6px;border-top:1px dashed var(--line)}
+.scrow{display:flex;gap:6px;align-items:baseline;font-size:13px;color:var(--mut)}
+.scrow b{color:var(--txt)}
+.scrow b.miss{color:var(--dim)}
+.sctext{min-height:110px;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap}
+
+/* Warnhinweis Antikoagulation */
+.vak{display:inline-flex;align-items:center;min-height:26px;padding:0 9px;border-radius:7px;font-size:12px;font-weight:700;letter-spacing:.04em;background:var(--red-soft);border:1px solid var(--red);color:var(--red);flex:none}
+.vak.sm{min-height:20px;padding:0 6px;font-size:11px}
+.pvak{border:1.2pt solid #000;border-radius:2pt;padding:0 4pt;font-weight:700;font-size:8.5pt;letter-spacing:.04em}
+
 </style>
 </head>
 <body>
@@ -598,7 +633,7 @@ react-dom/cjs/react-dom.production.min.js:
   const LOGO_DARK = "data:image/png;base64,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";
   const KEY = "schicht_v1";
   const THEME_KEY = "schicht_theme";
-  const APP_VERSION = "1.4.0";
+  const APP_VERSION = "1.7.0";
   const INFEKTIO_KEY = "schicht_infektio_url";
   const INFEKTIO_DEFAULT = "https://ftigiser-collab.github.io/InfektioBuddy/";
   const MAX_MINE = 10;
@@ -657,7 +692,7 @@ react-dom/cjs/react-dom.production.min.js:
       G("Ma\xDFnahme", ["Weaning Stufe", "SBT bestanden", "SBT abgebrochen", "Extubation", "Re-Intubation", "Bauchlage", "R\xFCckenlage", "Bronchoskopie", "Pleuradrainage", "Punktion", "Inhalation", "Tracheotomie", "Atemtherapie"])
     ] },
     { k: "kreislauf", name: "H\xE4modynamik", short: "Kreisl.", e: "\u2764\uFE0F", c: "#e8607e", hint: "Katecholamine, MAP, Rhythmus, Echo, Transfusion", chips: [
-      G("Kreislauf", ["MAP", "HF", "NA \xB5g/kg/min", "Vasopressin", "Dobutamin", "Adrenalin", "Milrinon", "katecholaminfrei", "Volumenbolus", "Hydrocortison", "Urapidil", "Clonidin"]),
+      G("Kreislauf", ["MAP", "HF", "NA ml/h", "NA \xB5g/kg/min", "Vasopressin", "Dobutamin", "Adrenalin", "Milrinon", "katecholaminfrei", "Volumenbolus", "Hydrocortison", "Urapidil", "Clonidin"]),
       G("Rhythmus", ["SR", "VHF tachykard", "VHF normofrequent", "Bradykardie", "Amiodaron", "Betablocker", "Kardioversion", "Schrittmacher", "Kalium / Magnesium"]),
       G("Diagnostik & Transfusion", ["Echo", "TEE", "PiCCO", "VExUS", "ZVD", "EK", "TK", "FFP", "Fibrinogen substituiert", "Blutung"])
     ] },
@@ -722,6 +757,27 @@ react-dom/cjs/react-dom.production.min.js:
     return { ...p, verlauf: strip(p.verlauf), problem: strip(p.problem), baustellen: strip(p.baustellen), todos: strip(p.todos), orga: strip(p.orga), systeme, labs, uebNotiz: "" };
   }
   const dropDoneTodos = (p) => ({ ...p, todos: (p.todos || []).filter((t) => !t.done) });
+  const NA_KONZ = 0.2;
+  const patGewicht = (p) => {
+    const g = parseFloat(String(p.gewicht || "").replace(",", "."));
+    if (Number.isFinite(g) && g > 0) return g;
+    const m = String(p.info || "").match(/(\d{2,3})\s*kg/i);
+    return m ? Number(m[1]) : null;
+  };
+  const naRate = (mlh, kg) => mlh * NA_KONZ * 1e3 / 60 / kg;
+  const fmtNum = (n) => {
+    let s = n >= 10 ? n.toFixed(0) : n >= 1 ? n.toFixed(2) : n.toFixed(3);
+    if (s.indexOf(".") >= 0) s = s.replace(/0+$/, "").replace(/\.$/, "");
+    return s.replace(".", ",");
+  };
+  function annotateNA(text, p) {
+    const kg = patGewicht(p);
+    if (!kg || !text) return text;
+    return text.replace(
+      /\b(NA|Noradrenalin|Arterenol)\b([^,;]{0,20}?)(\d+(?:[.,]\d+)?)\s*ml\s*\/\s*h(?!\s*\()/gi,
+      (m, sub, mid, val) => `${m} (${fmtNum(naRate(parseFloat(String(val).replace(",", ".")), kg))} \xB5g/kg/min)`
+    );
+  }
   const VOL_STATUS = [["hypo", "hypovol\xE4m"], ["eu", "euvol\xE4m"], ["hyper", "hypervol\xE4m"]];
   const VOL_LABEL = Object.fromEntries(VOL_STATUS);
   const ZIEL = [["neg", "negativ"], ["null", "ausgeglichen"], ["pos", "positiv"]];
@@ -758,14 +814,17 @@ react-dom/cjs/react-dom.production.min.js:
     const m = parseMl(v.zielMenge);
     return (Number.isNaN(m) ? ZIEL_LABEL[v.ziel] || "" : fmtMl(m)) + (Number.isNaN(m) ? "" : "/24 h");
   }
+  const LAB_FAVS = ["Hb", "Thrombozyten", "Leukos", "Quick", "pTT", "Na+", "K+", "Krea", "Harnstoff", "Bilirubin", "CRP", "p/F", "Laktat"];
+  const LAB_FAV_POS = Object.fromEntries(LAB_FAVS.map((n, i) => [n, i]));
+  const isFav = (n) => LAB_FAV_POS[n] !== void 0;
+  const LAB_FAV_GROUP = { k: "fav", name: "\u2605 Favoriten", items: [] };
   const LAB_GROUPS = [
-    { k: "bga", name: "BGA", items: [["pH", ""], ["pO2", "mmHg"], ["pCO2", "mmHg"], ["p/F", ""], ["BE", "mmol/l"], ["HCO3", "mmol/l"], ["SpO2", "%"], ["ScvO2", "%"]] },
-    { k: "blut", name: "Blutbild & Gerinnung", items: [["Hb", "g/dl"], ["Thrombozyten", "/nl"], ["INR", ""], ["Quick", "%"], ["pTT", "s"], ["Fibrinogen", "g/l"], ["D-Dimere", "mg/l"], ["AT III", "%"]] },
-    { k: "herz", name: "Herz & Perfusion", items: [["Laktat", "mmol/l"], ["Troponin", "ng/l"], ["BNP", "pg/ml"], ["CK", "U/l"]] },
-    { k: "niere", name: "Niere & Elektrolyte", items: [["Krea", "mg/dl"], ["Harnstoff", "mg/dl"], ["K+", "mmol/l"], ["Na+", "mmol/l"], ["Cl-", "mmol/l"], ["Ca", "mmol/l"], ["Phosphat", "mmol/l"], ["Mg", "mmol/l"]] },
-    { k: "leber", name: "Leber & Pankreas", items: [["Bilirubin", "mg/dl"], ["GOT", "U/l"], ["GPT", "U/l"], ["GGT", "U/l"], ["AP", "U/l"], ["Lipase", "U/l"], ["Albumin", "g/l"], ["Ammoniak", "\xB5mol/l"]] },
-    { k: "infekt", name: "Infekt", items: [["CRP", "mg/l"], ["PCT", "ng/ml"], ["Leukos", "/nl"], ["IL-6", "pg/ml"], ["Temp", "\xB0C"]] },
-    { k: "stoffw", name: "Stoffwechsel & Sonstige", items: [["Glukose", "mg/dl"], ["Triglyzeride", "mg/dl"], ["TSH", "mU/l"], ["Cortisol", "\xB5g/dl"], ["NSE", "\xB5g/l"]] }
+    { k: "bga", name: "BGA", items: [["pH", ""], ["pO2", "mmHg"], ["pCO2", "mmHg"], ["p/F", ""], ["BE", "mmol/l"], ["Laktat", "mmol/l"], ["ScvO2", "%"]] },
+    { k: "blut", name: "Blutbild & Gerinnung", items: [["Hb", "g/dl"], ["Thrombozyten", "/nl"], ["Quick", "%"], ["pTT", "s"]] },
+    { k: "niere", name: "Niere & Elektrolyte", items: [["Krea", "mg/dl"], ["Harnstoff", "mg/dl"], ["K+", "mmol/l"], ["Na+", "mmol/l"], ["Ca", "mmol/l"], ["Phosphat", "mmol/l"]] },
+    { k: "leber", name: "Leber & Pankreas", items: [["Bilirubin", "mg/dl"], ["GOT", "U/l"], ["GPT", "U/l"], ["GGT", "U/l"], ["AP", "U/l"], ["Lipase", "U/l"], ["Albumin", "g/l"]] },
+    { k: "infekt", name: "Infekt", items: [["CRP", "mg/l"], ["PCT", "ng/ml"], ["Leukos", "/nl"]] },
+    { k: "stoffw", name: "Stoffwechsel & Sonstige", items: [["Glukose", "mg/dl"], ["Troponin", "ng/l"], ["BNP", "pg/ml"], ["CK", "U/l"], ["TSH", "mU/l"], ["NSE", "\xB5g/l"]] }
   ];
   const LAB_GRP_OF = {};
   const LAB_UNIT_OF = {};
@@ -773,8 +832,12 @@ react-dom/cjs/react-dom.production.min.js:
     LAB_GRP_OF[n] = g.k;
     LAB_UNIT_OF[n] = u;
   }));
-  const OLD_SYS_TO_GRP = { pulmo: "bga", kreislauf: "herz", niere: "niere", abdomen: "leber", infekt: "infekt", neuro: "stoffw", schmerz: "stoffw", haut: "stoffw" };
-  const labGrp = (name, lab) => LAB_GRP_OF[name] || lab && lab.grp || lab && OLD_SYS_TO_GRP[lab.sys] || "stoffw";
+  const OLD_SYS_TO_GRP = { pulmo: "bga", kreislauf: "blut", niere: "niere", abdomen: "leber", infekt: "infekt", neuro: "stoffw", schmerz: "stoffw", haut: "stoffw" };
+  const OLD_GRP_MAP = { herz: "blut" };
+  const labGrp = (name, lab) => {
+    const g = LAB_GRP_OF[name] || lab && lab.grp || lab && OLD_SYS_TO_GRP[lab.sys] || "stoffw";
+    return OLD_GRP_MAP[g] || g;
+  };
   const unitOf = (name) => LAB_UNIT_OF[name] || "";
   const parseNum = (v) => {
     const n = parseFloat(String(v).replace(/[^0-9,.-]/g, "").replace(",", "."));
@@ -788,15 +851,18 @@ react-dom/cjs/react-dom.production.min.js:
   }
   function labsByGroup(p) {
     const L = p.labs || {};
-    return LAB_GROUPS.map((g) => {
+    const shown = (n) => L[n] && (L[n].vals.length || L[n].imp || L[n].ueb);
+    const favRows = LAB_FAVS.filter(shown).map((n) => [n, L[n]]);
+    const rest = LAB_GROUPS.map((g) => {
       const std = g.items.map((x) => x[0]);
-      const names = Object.keys(L).filter((n) => labGrp(n, L[n]) === g.k && (L[n].vals.length || L[n].imp || L[n].ueb));
+      const names = Object.keys(L).filter((n) => !isFav(n) && labGrp(n, L[n]) === g.k && shown(n));
       names.sort((a, b) => {
         const ia = std.indexOf(a), ib = std.indexOf(b);
         return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
       });
       return { group: g, rows: names.map((n) => [n, L[n]]) };
     }).filter((x) => x.rows.length);
+    return (favRows.length ? [{ group: LAB_FAV_GROUP, rows: favRows }] : []).concat(rest);
   }
   const allLabs = (p) => labsByGroup(p).flatMap((x) => x.rows);
   const impLabs = (p) => Object.entries(p.labs || {}).filter(([, l]) => l.imp && l.vals.length).map(([n, l]) => ({ name: n, last: l.vals[l.vals.length - 1], trend: labTrend(l.vals), unit: l.unit }));
@@ -961,6 +1027,9 @@ react-dom/cjs/react-dom.production.min.js:
   VE_GROUPS.forEach((g) => g.items.forEach((i) => {
     VE_COLOR[i] = g.c;
   }));
+  const VAK_VE = ["Antikoagulation (DOAK / VKA)"];
+  const hasVAK = (p) => (p.vorerkrankungen || []).some((v) => VAK_VE.includes(v));
+  const veVisible = (list) => (list || []).filter((v) => !VAK_VE.includes(v));
   const VE_FREE = "#7f93a8";
   const veColor = (v) => VE_COLOR[v] || VE_FREE;
   const VERLAUF_CHIPS = [
@@ -1006,6 +1075,7 @@ react-dom/cjs/react-dom.production.min.js:
     mine: true,
     aufnahme: todayYMD(),
     info: "",
+    gewicht: "",
     diagnose: "",
     vorerkrankungen: [],
     verlauf: [],
@@ -1076,6 +1146,7 @@ react-dom/cjs/react-dom.production.min.js:
     const pats = [
       newPatient({
         name: "Herr Falke",
+        gewicht: "80",
         diagnose: "Moderates ARDS bei CAP",
         zimmer: 4,
         platz: "F",
@@ -1092,7 +1163,7 @@ react-dom/cjs/react-dom.production.min.js:
           neuro: S("ok", [E(2, 4, "RASS -4 unter Propofol 200 mg/h + Sufentanil 20 \xB5g/h"), E(0, 6, "RASS -4, Pupillen isokor, prompt")]),
           schmerz: S("ok", [E(2, 5, "BPS 3, Sufentanil ausreichend")]),
           pulmo: S("hot", [E(2, 4, "BIPAP PEEP 12, FiO2 0,7, p/F 120"), E(1, 8, "Lunge feucht, Erguss bds. gering"), E(0, 6, "p/F 95 bei PEEP 14, FiO2 0,8")]),
-          kreislauf: S("hot", [E(2, 4, "NA 0,15 \xB5g/kg/min, MAP 65"), E(1, 8, "Hb 9 \u2192 6 \u2192 2 EK \u2192 Hb 8"), E(0, 6, "NA 0,25 steigend, Laktat 2,1"), E(0, 7, "Echo: EF 45 %, keine RV-Belastung")]),
+          kreislauf: S("hot", [E(2, 4, "NA 0,15 \xB5g/kg/min, MAP 65"), E(1, 8, "Hb 9 \u2192 6 \u2192 2 EK \u2192 Hb 8"), E(0, 6, "NA 6 ml/h (0,25 \xB5g/kg/min) steigend, Laktat 2,1"), E(0, 7, "Echo: EF 45 %, keine RV-Belastung")]),
           niere: S("auff", [E(1, 8, "Bilanz +2,5 l seit Aufnahme"), E(0, 6, "Diurese 40 ml/h, Krea 1,8, Harnstoff 68")]),
           abdomen: S("ok", [E(1, 8, "enteral 20 ml/h, kein Stuhl seit 3 d \u2192 Laktulose")]),
           infekt: S("ok", [E(3, 15, "BK + Trachealsekret abgenommen"), E(0, 6, "BK bisher steril, Infektzeichen r\xFCckl\xE4ufig; Makrolid nach 3 Tagen beendet")]),
@@ -1117,6 +1188,7 @@ react-dom/cjs/react-dom.production.min.js:
       }),
       newPatient({
         name: "Frau Ahorn",
+        gewicht: "72",
         diagnose: "Anastomoseninsuffizienz nach PPPD, septischer Schock (r\xFCckl\xE4ufig)",
         zimmer: 2,
         platz: "T",
@@ -1151,6 +1223,7 @@ react-dom/cjs/react-dom.production.min.js:
       }),
       newPatient({
         name: "Frau Birke",
+        gewicht: "68",
         diagnose: "HELLP-Syndrom, Z. n. Sectio",
         zimmer: 7,
         platz: "F",
@@ -1443,6 +1516,154 @@ react-dom/cjs/react-dom.production.min.js:
     L.push("Mit freundlichen kollegialen Gr\xFC\xDFen");
     return L.join("\n");
   }
+  const sysEntries = (p, k) => ((p.systeme || {})[k] || {}).entries || [];
+  const sysLast = (p, k) => {
+    const e = sysEntries(p, k);
+    return e.length ? e[e.length - 1].text : "";
+  };
+  function sysMatch(p, k, re) {
+    const e = sysEntries(p, k);
+    for (let i = e.length - 1; i >= 0; i--) if (re.test(e[i].text)) return e[i].text;
+    return e.length ? e[e.length - 1].text : "";
+  }
+  function buildTagesnotiz(p) {
+    const v = volOf(p);
+    const inf = infektOf(p);
+    const seg = [];
+    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9äöüß/+]/g, "");
+    const push = (s) => {
+      if (!s) return;
+      const t = String(s).trim().replace(/[.;]+$/, "");
+      if (!t) return;
+      const n = norm(t);
+      if (seg.some((x) => norm(x).includes(n) || n.includes(norm(x)))) return;
+      seg.push(t);
+    };
+    const pushOnce = (word, s) => {
+      if (!s) return;
+      const re = new RegExp(word.replace("/", "\\/"), "i");
+      if (seg.some((x) => re.test(x))) return;
+      push(s);
+    };
+    push(sysLast(p, "neuro") || "wach, orientiert");
+    push(sysLast(p, "schmerz") || "NAS < 5");
+    const pulmo = sysMatch(p, "pulmo", /peep|fio2|p\/f|niv|hfnc|o2|raumluft|extub|beatm|spontan/i) || "spontan atmend mit O2 [x] l";
+    push(pulmo);
+    const pf = labLast(p, "p/F");
+    if (pf) pushOnce("p\\/F", `p/F ${pf}`);
+    push(sysMatch(p, "kreislauf", /na |noradrenalin|katechol|map|stabil|vasopressin|dobutamin/i) || "h\xE4modynamisch stabil, kein NA");
+    const lak = labLast(p, "Laktat");
+    pushOnce("Laktat", lak ? `Laktat ${lak}` : "kein Laktat");
+    const hb = labLast(p, "Hb");
+    if (hb) pushOnce("\\bHb\\b", `Hb ${hb}`);
+    push(sysMatch(p, "niere", /diurese|bilanz|krea|cica|anurie|oligurie/i) || "Diurese ad\xE4quat");
+    const b24 = v.b24.length ? fmtMl(lastMl(v.b24)) || v.b24[v.b24.length - 1].v : "";
+    if (b24) pushOnce("Bilanz", `Bilanz 24 h ${b24}${volZielText(v) ? " (Ziel " + volZielText(v) + ")" : ""}`);
+    const krea = labLast(p, "Krea");
+    if (krea) pushOnce("Krea", `Krea ${krea}`);
+    let abd = sysMatch(p, "abdomen", /stuhl|abgef|drainage|enteral|parenteral|kost|sonde/i) || "abgef\xFChrt, Drainagen [x]";
+    abd = abd.replace(/kein(en)? Stuhl[^,;]*/gi, "abf\xFChren").replace(/\b(Laktulose|Macrogol|Movicol|Bisacodyl|Klysma|Klistier|Einlauf|Prucaloprid|Amidotrizoat|Laxans|Laxantien)\b/gi, "abf\xFChren").replace(/abführen(\s*(→|->|,|;)?\s*abführen)+/gi, "abf\xFChren").replace(/\s{2,}/g, " ").trim();
+    push(abd);
+    const ab = inf.therapie.filter((t) => !t.ende);
+    const fokus = inf.foki.map((id) => (FOKUS_BY_ID[id] || {}).name).filter(Boolean).join(" / ");
+    if (ab.length) push(`${ab.map((t) => `${t.name} Tag ${abTag(t)}`).join(" + ")}${fokus ? " bei " + fokus : ""}${inf.erreger.length ? " (" + inf.erreger.join(", ") + ")" : ""}`);
+    else if (fokus) push(`${fokus}, aktuell keine Antibiose`);
+    else push("kein Infektfokus, keine Antibiose");
+    const ziele = [
+      ...(p.baustellen || []).filter((x) => x.hot && !x.done).map((x) => x.text),
+      ...(p.todos || []).filter((t) => !t.done && t.prio === 1).map((t) => t.text)
+    ].slice(0, 3);
+    const ziel = ziele.length ? ziele.join("; ") : "[Ziel]";
+    const txt = seg.join(", ");
+    return `${txt.charAt(0).toUpperCase()}${txt.slice(1)}. AKTUELLES ZIEL: ${ziel.toUpperCase()}`;
+  }
+  const num = (v) => {
+    const n = parseFloat(String(v == null ? "" : v).replace(",", ".").replace(/[^0-9.\-]/g, ""));
+    return Number.isFinite(n) ? n : null;
+  };
+  const emptyScores = () => ({ af: "", spo2: "", scale2: false, o2: false, rrsys: "", puls: "", avpu: "A", temp: "", pf: "", vent: false, thrombo: "", bili: "", map: "", kat: 0, gcs: "", krea: "", urin: "", updated: "" });
+  const scoresOf = (p) => ({ ...emptyScores(), ...p.scores || {} });
+  function scoresPrefill(p) {
+    const s = scoresOf(p);
+    const from = (key, lab) => {
+      if (!s[key]) {
+        const v = labLast(p, lab);
+        if (v) s[key] = v;
+      }
+    };
+    from("pf", "p/F");
+    from("thrombo", "Thrombozyten");
+    from("bili", "Bilirubin");
+    from("krea", "Krea");
+    return s;
+  }
+  const AVPU = [["A", "wach (A)"], ["C", "neue Verwirrtheit (C)"], ["V", "reagiert auf Ansprache (V)"], ["P", "reagiert auf Schmerz (P)"], ["U", "nicht erweckbar (U)"]];
+  const KAT_STUFEN = [
+    [0, "keine Katecholamine"],
+    [2, "Dopamin \u2264 5 oder Dobutamin (jede Dosis)"],
+    [3, "Dopamin > 5 oder Adrenalin \u2264 0,1 oder Noradrenalin \u2264 0,1"],
+    [4, "Dopamin > 15 oder Adrenalin > 0,1 oder Noradrenalin > 0,1"]
+  ];
+  function news2(s) {
+    const P = [];
+    const af = num(s.af);
+    P.push(["AF", af == null ? null : af <= 8 ? 3 : af <= 11 ? 1 : af <= 20 ? 0 : af <= 24 ? 2 : 3]);
+    const sp = num(s.spo2);
+    let spP = null;
+    if (sp != null) {
+      if (!s.scale2) spP = sp <= 91 ? 3 : sp <= 93 ? 2 : sp <= 95 ? 1 : 0;
+      else if (!s.o2) spP = sp <= 83 ? 3 : sp <= 85 ? 2 : sp <= 87 ? 1 : 0;
+      else spP = sp <= 83 ? 3 : sp <= 85 ? 2 : sp <= 87 ? 1 : sp <= 92 ? 0 : sp <= 94 ? 1 : sp <= 96 ? 2 : 3;
+    }
+    P.push([s.scale2 ? "SpO2 (Skala 2)" : "SpO2", spP]);
+    P.push(["O2-Gabe", s.o2 ? 2 : 0]);
+    const rr = num(s.rrsys);
+    P.push(["RR systolisch", rr == null ? null : rr <= 90 ? 3 : rr <= 100 ? 2 : rr <= 110 ? 1 : rr <= 219 ? 0 : 3]);
+    const pu = num(s.puls);
+    P.push(["Puls", pu == null ? null : pu <= 40 ? 3 : pu <= 50 ? 1 : pu <= 90 ? 0 : pu <= 110 ? 1 : pu <= 130 ? 2 : 3]);
+    P.push(["Bewusstsein", s.avpu === "A" ? 0 : 3]);
+    const t = num(s.temp);
+    P.push(["Temperatur", t == null ? null : t <= 35 ? 3 : t <= 36 ? 1 : t <= 38 ? 0 : t <= 39 ? 1 : 2]);
+    const missing = P.filter((x) => x[1] === null).map((x) => x[0]);
+    const total = P.reduce((n, x) => n + (x[1] || 0), 0);
+    const red = P.some((x) => x[1] === 3);
+    const risk = total >= 7 ? "hoch" : total >= 5 || red ? "mittel" : "niedrig";
+    return { parts: P, total, missing, risk, red };
+  }
+  function sofa(s) {
+    const P = [];
+    const pf = num(s.pf);
+    P.push(["Respiration", pf == null ? null : pf < 100 ? s.vent ? 4 : 2 : pf < 200 ? s.vent ? 3 : 2 : pf < 300 ? 2 : pf < 400 ? 1 : 0]);
+    const th = num(s.thrombo);
+    P.push(["Gerinnung", th == null ? null : th < 20 ? 4 : th < 50 ? 3 : th < 100 ? 2 : th < 150 ? 1 : 0]);
+    const bi = num(s.bili);
+    P.push(["Leber", bi == null ? null : bi >= 12 ? 4 : bi >= 6 ? 3 : bi >= 2 ? 2 : bi >= 1.2 ? 1 : 0]);
+    const mp = num(s.map);
+    const kat = Number(s.kat) || 0;
+    P.push(["Kreislauf", kat > 0 ? kat : mp == null ? null : mp < 70 ? 1 : 0]);
+    const g = num(s.gcs);
+    P.push(["ZNS", g == null ? null : g < 6 ? 4 : g <= 9 ? 3 : g <= 12 ? 2 : g <= 14 ? 1 : 0]);
+    const kr = num(s.krea);
+    const ur = num(s.urin);
+    let ren = kr == null ? null : kr >= 5 ? 4 : kr >= 3.5 ? 3 : kr >= 2 ? 2 : kr >= 1.2 ? 1 : 0;
+    if (ur != null) {
+      const u = ur < 200 ? 4 : ur < 500 ? 3 : 0;
+      ren = ren == null ? u || null : Math.max(ren, u);
+    }
+    P.push(["Niere", ren]);
+    const missing = P.filter((x) => x[1] === null).map((x) => x[0]);
+    const total = P.reduce((n, x) => n + (x[1] || 0), 0);
+    return { parts: P, total, missing };
+  }
+  function scoresText(p, s) {
+    const n = news2(s), f = sofa(s);
+    const v = (x) => x === "" || x == null ? "\u2014" : x;
+    const L = [];
+    L.push(`${p.name || "Patient"} \xB7 Zi ${p.zimmer} ${p.platz} \xB7 ${fmtDT(nowISO())}`);
+    L.push(`NEWS2: AF ${v(s.af)} | SpO2 ${v(s.spo2)} %${s.scale2 ? " (Skala 2)" : ""} | ${s.o2 ? "mit O2" : "Raumluft"} | RRsys ${v(s.rrsys)} | Puls ${v(s.puls)} | ${s.avpu} | Temp ${v(s.temp)} \xB0C \u2192 ${n.total}${n.missing.length ? " (unvollst\xE4ndig)" : ""}`);
+    L.push(`SOFA: p/F ${v(s.pf)}${s.vent ? " (beatmet)" : ""} | Thrombo ${v(s.thrombo)} | Bili ${v(s.bili)} | MAP ${v(s.map)}${Number(s.kat) ? ", Katecholamine Stufe " + s.kat : ""} | GCS ${v(s.gcs)} | Krea ${v(s.krea)}${s.urin ? ", Urin " + s.urin + " ml/24 h" : ""} \u2192 ${f.total}${f.missing.length ? " (unvollst\xE4ndig)" : ""}`);
+    return L.join("\n");
+  }
   const { useState, useEffect, useMemo, useRef } = React;
   function Kette({ entries, onPick, shiftStart, compact, max }) {
     if (!entries || !entries.length) return /* @__PURE__ */ React.createElement("div", { className: "empty" }, "Noch kein Eintrag.");
@@ -1516,11 +1737,12 @@ react-dom/cjs/react-dom.production.min.js:
       }
     ), /* @__PURE__ */ React.createElement("div", { className: "acts" }, onFlag && /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm ueb-btn" + (entry.ueb ? " on" : ""), onClick: onFlag }, "\u2691 ", entry.ueb ? "\xDCbergabe-Markierung entfernen" : "F\xFCr \xDCbergabe markieren"), /* @__PURE__ */ React.createElement("span", { style: { flex: 1 } }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm danger ghost", onClick: onDelete }, "L\xF6schen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm ghost", onClick: onCancel }, "Abbrechen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm primary", onClick: () => onSave(txt.trim()) }, "Speichern")));
   }
-  function Timeline({ entries, onChange, chips, placeholder, mode, shiftStart }) {
+  function Timeline({ entries, onChange, chips, placeholder, mode, shiftStart, pat }) {
     const [edit, setEdit] = useState(null);
-    const add = (text) => onChange([...entries, { id: uid(), t: nowISO(), text }]);
+    const conv = (t) => pat ? annotateNA(t, pat) : t;
+    const add = (text) => onChange([...entries, { id: uid(), t: nowISO(), text: conv(text) }]);
     const saveEdit = (text) => {
-      onChange(text ? entries.map((e) => e.id === edit.id ? { ...e, text } : e) : entries.filter((e) => e.id !== edit.id));
+      onChange(text ? entries.map((e) => e.id === edit.id ? { ...e, text: conv(text) } : e) : entries.filter((e) => e.id !== edit.id));
       setEdit(null);
     };
     const del = () => {
@@ -1573,24 +1795,26 @@ react-dom/cjs/react-dom.production.min.js:
     return /* @__PURE__ */ React.createElement("span", { className: "labvals" }, hidden > 0 && /* @__PURE__ */ React.createElement("span", { className: "lv more" }, "+", hidden), list.map((x, i) => /* @__PURE__ */ React.createElement(React.Fragment, { key: x.id }, (i > 0 || hidden > 0) && /* @__PURE__ */ React.createElement("span", { className: "arr" }, "\u203A"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "lv" + (i === list.length - 1 ? " cur" : "") + (isNew(x, shiftStart) ? " new" : ""), onClick: onPick ? () => onPick(x) : void 0, disabled: !onPick }, /* @__PURE__ */ React.createElement("span", { className: "pd" }, fmtD(x.t)), x.v))));
   }
   function LabSection({ p, onUpdate, shiftStart }) {
-    const [grp, setGrp] = useState(0);
-    const [sel, setSel] = useState(LAB_GROUPS[0].items[0][0]);
+    const [grp, setGrp] = useState(-1);
+    const [sel, setSel] = useState(LAB_FAVS[0]);
     const [val, setVal] = useState("");
     const [edit, setEdit] = useState(null);
     const [open, setOpen] = useState(true);
     const ref = useRef(null);
     const labs = p.labs || {};
     const groups = labsByGroup(p);
-    const g = LAB_GROUPS[grp];
-    const custom = Object.keys(labs).filter((n) => !LAB_GRP_OF[n] && labGrp(n, labs[n]) === g.k);
-    const chips = [...g.items.map((x) => x[0]), ...custom];
+    const fav = grp < 0;
+    const g = fav ? LAB_GROUPS.find((x) => x.k === LAB_GRP_OF[sel]) || LAB_GROUPS[0] : LAB_GROUPS[grp];
+    const custom = fav ? [] : Object.keys(labs).filter((n) => !LAB_GRP_OF[n] && labGrp(n, labs[n]) === g.k);
+    const chips = fav ? LAB_FAVS : [...g.items.map((x) => x[0]), ...custom];
     const upd = (fn) => onUpdate((x) => ({ ...x, labs: fn(x.labs || {}) }));
     const ensure = (L, name, gk) => L[name] || { grp: gk, unit: unitOf(name), imp: false, ueb: false, vals: [] };
     const add = () => {
       const v = val.trim();
       if (!v || !sel) return;
+      const gk = LAB_GRP_OF[sel] || g.k;
       upd((L) => {
-        const cur = ensure(L, sel, g.k);
+        const cur = ensure(L, sel, gk);
         return { ...L, [sel]: { ...cur, vals: [...cur.vals, { id: uid(), t: nowISO(), v }] } };
       });
       setVal("");
@@ -1615,15 +1839,19 @@ react-dom/cjs/react-dom.production.min.js:
     };
     const pickGroup = (i) => {
       setGrp(i);
+      if (i < 0) {
+        setSel(LAB_FAVS[0]);
+        return;
+      }
       const first = LAB_GROUPS[i].items[0];
       setSel(first ? first[0] : null);
     };
     const unit = sel ? unitOf(sel) || (labs[sel] || {}).unit || "" : "";
     const total = allLabs(p).length;
-    return /* @__PURE__ */ React.createElement("section", { className: "sec labsec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("span", { className: "sysbadge", style: { "--sc": "var(--blu)" } }, "Lab"), /* @__PURE__ */ React.createElement("h2", null, "Labor"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, total ? `${total} Parameter \xB7 \u2605 wichtig \xB7 \u2691 \xDCbergabe` : "noch keine Werte \u2014 Gruppe w\xE4hlen, Parameter antippen, Wert eintragen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "iconbtn", onClick: () => setOpen((o) => !o), "aria-label": open ? "Einklappen" : "Ausklappen" }, open ? "\u25BE" : "\u25B8")), open && /* @__PURE__ */ React.createElement(React.Fragment, null, groups.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "labgrid" }, groups.map(({ group, rows }) => /* @__PURE__ */ React.createElement("div", { key: group.k, className: "labgroup" }, /* @__PURE__ */ React.createElement("div", { className: "labgroup-h" }, group.name), rows.map(([name, l]) => /* @__PURE__ */ React.createElement("div", { key: name, className: "labrow" + (l.imp ? " imp" : "") + (l.ueb ? " ueb" : "") }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "star" + (l.imp ? " on" : ""), onClick: () => toggle(name, "imp"), "aria-label": "Wichtig" }, l.imp ? "\u2605" : "\u2606"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "flagbtn" + (l.ueb ? " on" : ""), onClick: () => toggle(name, "ueb"), "aria-label": "F\xFCr \xDCbergabe markieren" }, "\u2691"), /* @__PURE__ */ React.createElement("span", { className: "labname" }, name, (l.unit || unitOf(name)) && /* @__PURE__ */ React.createElement("span", { className: "unit" }, l.unit || unitOf(name))), /* @__PURE__ */ React.createElement(LabValues, { vals: l.vals, shiftStart, max: 6, onPick: (x) => setEdit({ name, ...x }) }), /* @__PURE__ */ React.createElement("span", { className: "trend t" + (labTrend(l.vals) === "\u2191" ? "up" : labTrend(l.vals) === "\u2193" ? "down" : "flat") }, labTrend(l.vals))))))), edit && /* @__PURE__ */ React.createElement(EditRow, { entry: { t: edit.t, text: edit.v }, onSave: saveEdit, onDelete: () => saveEdit(""), onCancel: () => setEdit(null) }), /* @__PURE__ */ React.createElement("div", { className: "gtabs" }, LAB_GROUPS.map((gg, i) => /* @__PURE__ */ React.createElement("button", { type: "button", key: gg.k, className: "gtab" + (i === grp ? " on" : ""), onClick: () => pickGroup(i) }, gg.name))), /* @__PURE__ */ React.createElement("div", { className: "chips scroll chipsrow" }, chips.map((n) => /* @__PURE__ */ React.createElement("button", { type: "button", key: n, className: "chip" + (n === sel ? " on" : ""), onClick: () => {
+    return /* @__PURE__ */ React.createElement("section", { className: "sec labsec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("span", { className: "sysbadge", style: { "--sc": "var(--blu)" } }, "Lab"), /* @__PURE__ */ React.createElement("h2", null, "Labor"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, total ? `${total} Parameter \xB7 \u2605 wichtig \xB7 \u2691 \xDCbergabe` : "noch keine Werte \u2014 Gruppe w\xE4hlen, Parameter antippen, Wert eintragen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "iconbtn", onClick: () => setOpen((o) => !o), "aria-label": open ? "Einklappen" : "Ausklappen" }, open ? "\u25BE" : "\u25B8")), open && /* @__PURE__ */ React.createElement(React.Fragment, null, groups.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "labgrid" }, groups.map(({ group, rows }) => /* @__PURE__ */ React.createElement("div", { key: group.k, className: "labgroup" + (group.k === "fav" ? " favcol" : "") }, /* @__PURE__ */ React.createElement("div", { className: "labgroup-h" }, group.name), rows.map(([name, l]) => /* @__PURE__ */ React.createElement("div", { key: name, className: "labrow" + (l.imp ? " imp" : "") + (l.ueb ? " ueb" : "") }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "star" + (l.imp ? " on" : ""), onClick: () => toggle(name, "imp"), "aria-label": "Wichtig" }, l.imp ? "\u2605" : "\u2606"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "flagbtn" + (l.ueb ? " on" : ""), onClick: () => toggle(name, "ueb"), "aria-label": "F\xFCr \xDCbergabe markieren" }, "\u2691"), /* @__PURE__ */ React.createElement("span", { className: "labname" }, name, (l.unit || unitOf(name)) && /* @__PURE__ */ React.createElement("span", { className: "unit" }, l.unit || unitOf(name))), /* @__PURE__ */ React.createElement(LabValues, { vals: l.vals, shiftStart, max: 6, onPick: (x) => setEdit({ name, ...x }) }), /* @__PURE__ */ React.createElement("span", { className: "trend t" + (labTrend(l.vals) === "\u2191" ? "up" : labTrend(l.vals) === "\u2193" ? "down" : "flat") }, labTrend(l.vals))))))), edit && /* @__PURE__ */ React.createElement(EditRow, { entry: { t: edit.t, text: edit.v }, onSave: saveEdit, onDelete: () => saveEdit(""), onCancel: () => setEdit(null) }), /* @__PURE__ */ React.createElement("div", { className: "gtabs" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "gtab fav" + (grp < 0 ? " on" : ""), onClick: () => pickGroup(-1) }, "\u2605 Favoriten"), LAB_GROUPS.map((gg, i) => /* @__PURE__ */ React.createElement("button", { type: "button", key: gg.k, className: "gtab" + (i === grp ? " on" : ""), onClick: () => pickGroup(i) }, gg.name))), /* @__PURE__ */ React.createElement("div", { className: "chips scroll chipsrow" }, chips.map((n) => /* @__PURE__ */ React.createElement("button", { type: "button", key: n, className: "chip" + (n === sel ? " on" : ""), onClick: () => {
       setSel(n);
       ref.current && ref.current.focus();
-    } }, n)), /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip dash", onClick: addCustom }, "+ Parameter")), sel && /* @__PURE__ */ React.createElement("div", { className: "addrow", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement(
+    } }, n)), !fav && /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip dash", onClick: addCustom }, "+ Parameter")), sel && /* @__PURE__ */ React.createElement("div", { className: "addrow", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement(
       "input",
       {
         ref,
@@ -1722,8 +1950,9 @@ react-dom/cjs/react-dom.production.min.js:
     return /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip ve" + (on ? " on" : ""), style: st, onClick }, /* @__PURE__ */ React.createElement("span", { className: "cdot", style: { background: c } }), v, removable && /* @__PURE__ */ React.createElement("span", { className: "x" }, "\xD7"));
   }
   function VEChips({ list }) {
-    if (!list || !list.length) return null;
-    return /* @__PURE__ */ React.createElement("div", { className: "chips" }, list.map((v) => {
+    const vis = veVisible(list);
+    if (!vis.length) return null;
+    return /* @__PURE__ */ React.createElement("div", { className: "chips" }, vis.map((v) => {
       const c = veColor(v);
       return /* @__PURE__ */ React.createElement("span", { key: v, className: "chip static ve", style: { borderColor: c + "80" } }, /* @__PURE__ */ React.createElement("span", { className: "cdot", style: { background: c } }), v);
     }));
@@ -1765,7 +1994,7 @@ react-dom/cjs/react-dom.production.min.js:
     const clash = occupied(p.zimmer, p.platz);
     const isNewPat = !patient.name && !allPatients.some((o) => o.id === patient.id);
     const tooMany = p.mine && !patient.mine && mineCount >= MAX_MINE;
-    return /* @__PURE__ */ React.createElement("div", { className: "modal-bg", onClick: onClose }, /* @__PURE__ */ React.createElement("div", { className: "modal", onClick: (e) => e.stopPropagation() }, /* @__PURE__ */ React.createElement("h2", null, isNewPat ? "Patient aufnehmen" : "Patient bearbeiten"), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Name (Alias, kein echter Name)"), /* @__PURE__ */ React.createElement("input", { autoFocus: true, value: p.name, placeholder: "z. B. Herr Falke", onChange: (e) => set("name", e.target.value) })), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Aktuelle Hauptdiagnose"), /* @__PURE__ */ React.createElement("input", { value: p.diagnose || "", placeholder: "z. B. Moderates ARDS bei CAP", onChange: (e) => set("diagnose", e.target.value) })), /* @__PURE__ */ React.createElement("div", { className: "row", style: { gap: 16, flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("div", { className: "field", style: { flex: "1 1 200px" } }, /* @__PURE__ */ React.createElement("label", null, "Aufnahme ITS"), /* @__PURE__ */ React.createElement("input", { type: "date", value: p.aufnahme, onChange: (e) => set("aufnahme", e.target.value) })), /* @__PURE__ */ React.createElement("div", { className: "field", style: { flex: "1 1 200px" } }, /* @__PURE__ */ React.createElement("label", null, "Kurzinfo (Alter, Geschlecht, Gewicht \u2026)"), /* @__PURE__ */ React.createElement("input", { value: p.info, placeholder: "z. B. 78 J., m, 80 kg", onChange: (e) => set("info", e.target.value) }))), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Zimmer"), /* @__PURE__ */ React.createElement("div", { className: "roomgrid" }, ROOMS.map((z) => {
+    return /* @__PURE__ */ React.createElement("div", { className: "modal-bg", onClick: onClose }, /* @__PURE__ */ React.createElement("div", { className: "modal", onClick: (e) => e.stopPropagation() }, /* @__PURE__ */ React.createElement("h2", null, isNewPat ? "Patient aufnehmen" : "Patient bearbeiten"), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Name (Alias, kein echter Name)"), /* @__PURE__ */ React.createElement("input", { autoFocus: true, value: p.name, placeholder: "z. B. Herr Falke", onChange: (e) => set("name", e.target.value) })), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Aktuelle Hauptdiagnose"), /* @__PURE__ */ React.createElement("input", { value: p.diagnose || "", placeholder: "z. B. Moderates ARDS bei CAP", onChange: (e) => set("diagnose", e.target.value) })), /* @__PURE__ */ React.createElement("div", { className: "row", style: { gap: 16, flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("div", { className: "field", style: { flex: "1 1 200px" } }, /* @__PURE__ */ React.createElement("label", null, "Aufnahme ITS"), /* @__PURE__ */ React.createElement("input", { type: "date", value: p.aufnahme, onChange: (e) => set("aufnahme", e.target.value) })), /* @__PURE__ */ React.createElement("div", { className: "field", style: { flex: "1 1 140px" } }, /* @__PURE__ */ React.createElement("label", null, "Gewicht (kg)"), /* @__PURE__ */ React.createElement("input", { inputMode: "decimal", value: p.gewicht || "", placeholder: "z. B. 80", onChange: (e) => set("gewicht", e.target.value) })), /* @__PURE__ */ React.createElement("div", { className: "field", style: { flex: "1 1 200px" } }, /* @__PURE__ */ React.createElement("label", null, "Kurzinfo (Alter, Geschlecht \u2026)"), /* @__PURE__ */ React.createElement("input", { value: p.info, placeholder: "z. B. 78 J., m", onChange: (e) => set("info", e.target.value) }))), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Zimmer"), /* @__PURE__ */ React.createElement("div", { className: "roomgrid" }, ROOMS.map((z) => {
       const full = occupied(z, "F") && occupied(z, "T");
       return /* @__PURE__ */ React.createElement("button", { type: "button", key: z, className: "rbtn" + (p.zimmer === z ? " on" : "") + (full ? " busy" : ""), onClick: () => set("zimmer", z) }, z);
     }))), /* @__PURE__ */ React.createElement("div", { className: "row", style: { gap: 16, flexWrap: "wrap", alignItems: "center" } }, /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Platz"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: p.platz === "F" ? "on" : "", onClick: () => set("platz", "F") }, "Fenster"), /* @__PURE__ */ React.createElement("button", { type: "button", className: p.platz === "T" ? "on" : "", onClick: () => set("platz", "T") }, "T\xFCr"))), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Zust\xE4ndigkeit"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "minetoggle" + (p.mine ? " on" : ""), onClick: () => set("mine", !p.mine) }, /* @__PURE__ */ React.createElement("span", { className: "dot" + (p.mine ? " on" : "") }), p.mine ? "Mein Patient \u2014 mit Details" : "Anderer Arzt \u2014 Mini-\xDCberblick"))), clash && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "Zi ", p.zimmer, " ", p.platz, " ist belegt (", clash.name || "ohne Namen", "). Anderen Platz w\xE4hlen oder den anderen Patienten zuerst verlegen."), tooMany && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "Du hast bereits ", mineCount, " eigene Patienten \u2014 mehr als ", MAX_MINE, " wird auf dem Ausdruck eng."), /* @__PURE__ */ React.createElement("div", { className: "field" }, /* @__PURE__ */ React.createElement("label", null, "Relevante Vorerkrankungen"), /* @__PURE__ */ React.createElement(VEPicker, { value: p.vorerkrankungen, onChange: (v) => set("vorerkrankungen", v) })), /* @__PURE__ */ React.createElement("div", { className: "acts" }, !isNewPat && /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn danger ghost left", onClick: () => onDischarge(p) }, "Verlegen / entlassen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn ghost", onClick: onClose }, "Abbrechen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn primary", disabled: !!clash, onClick: () => onSave(p) }, "Speichern"))));
@@ -1777,8 +2006,52 @@ react-dom/cjs/react-dom.production.min.js:
       return /* @__PURE__ */ React.createElement("span", { key: s.k, className: "sd " + f + (has ? " has" : ""), style: { "--sc": s.c }, title: s.name }, /* @__PURE__ */ React.createElement("span", { className: "emo" }, s.e), s.short);
     }));
   }
+  function VAKBadge({ p, small }) {
+    if (!hasVAK(p)) return null;
+    return /* @__PURE__ */ React.createElement("span", { className: "vak" + (small ? " sm" : ""), title: "Antikoagulation (DOAK / VKA)" }, "VAK");
+  }
   function Toast({ msg }) {
     return msg ? /* @__PURE__ */ React.createElement("div", { className: "toast" }, msg) : null;
+  }
+  function copyText(text, ta) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).then(() => true).catch(() => fallbackCopy(ta));
+    return Promise.resolve(fallbackCopy(ta));
+  }
+  function fallbackCopy(ta) {
+    try {
+      if (!ta) return false;
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      const ok = document.execCommand("copy");
+      ta.setSelectionRange(0, 0);
+      return ok;
+    } catch (e) {
+      return false;
+    }
+  }
+  function ScoreField({ label, hint, value, onChange, unit, wide }) {
+    return /* @__PURE__ */ React.createElement("label", { className: "scf" + (wide ? " wide" : "") }, /* @__PURE__ */ React.createElement("span", { className: "scl" }, label, unit && /* @__PURE__ */ React.createElement("span", { className: "unit" }, unit)), /* @__PURE__ */ React.createElement("input", { inputMode: "decimal", value, placeholder: hint || "", onChange: (e) => onChange(e.target.value) }));
+  }
+  function ScorePanel({ p, onUpdate, onClose, onToast }) {
+    const [s, setS] = useState(() => scoresPrefill(p));
+    const ta = useRef(null);
+    const set = (k, v) => setS((x) => ({ ...x, [k]: v }));
+    const n = news2(s), f = sofa(s);
+    const txt = scoresText(p, s);
+    const save2 = () => {
+      const val = { ...s, updated: nowISO() };
+      onUpdate((x) => ({ ...x, scores: val }));
+    };
+    const copy = () => {
+      save2();
+      copyText(txt, ta.current).then((ok) => onToast(ok ? "Werte kopiert" : "Kopieren nicht m\xF6glich \u2014 Text markieren und manuell kopieren"));
+    };
+    const Row = ({ r }) => /* @__PURE__ */ React.createElement("div", { className: "scrow" }, /* @__PURE__ */ React.createElement("span", null, r[0]), /* @__PURE__ */ React.createElement("b", { className: r[1] === null ? "miss" : "" }, r[1] === null ? "\u2014" : r[1]));
+    return /* @__PURE__ */ React.createElement("div", { className: "modal-bg", onClick: onClose }, /* @__PURE__ */ React.createElement("div", { className: "modal scoremodal", onClick: (e) => e.stopPropagation() }, /* @__PURE__ */ React.createElement("h2", null, "Scores \u2014 ", p.name || "ohne Namen", " ", /* @__PURE__ */ React.createElement("span", { className: "tag" }, "Zi ", p.zimmer, " ", p.platz)), /* @__PURE__ */ React.createElement("p", { className: "tag", style: { margin: 0 } }, "Werte zum Abtippen ins Stationsprogramm. p/F, Thrombozyten, Bilirubin und Kreatinin sind aus dem Labor vorbelegt, alles \xFCberschreibbar. Punkte sind nur eine Kontrollrechnung."), /* @__PURE__ */ React.createElement("div", { className: "scbox" }, /* @__PURE__ */ React.createElement("div", { className: "scbox-h" }, /* @__PURE__ */ React.createElement("b", null, "NEWS2"), /* @__PURE__ */ React.createElement("span", { className: "sctotal r-" + n.risk }, n.total, " Punkte \xB7 Risiko ", n.risk, n.missing.length ? " \xB7 unvollst\xE4ndig" : "")), /* @__PURE__ */ React.createElement("div", { className: "scgrid" }, /* @__PURE__ */ React.createElement(ScoreField, { label: "Atemfrequenz", unit: "/min", value: s.af, onChange: (v) => set("af", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "SpO2", unit: "%", value: s.spo2, onChange: (v) => set("spo2", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "RR systolisch", unit: "mmHg", value: s.rrsys, onChange: (v) => set("rrsys", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "Puls", unit: "/min", value: s.puls, onChange: (v) => set("puls", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "Temperatur", unit: "\xB0C", value: s.temp, onChange: (v) => set("temp", v) }), /* @__PURE__ */ React.createElement("label", { className: "scf" }, /* @__PURE__ */ React.createElement("span", { className: "scl" }, "Bewusstsein"), /* @__PURE__ */ React.createElement("select", { value: s.avpu, onChange: (e) => set("avpu", e.target.value) }, AVPU.map(([k, l]) => /* @__PURE__ */ React.createElement("option", { key: k, value: k }, l))))), /* @__PURE__ */ React.createElement("div", { className: "chips", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip" + (s.o2 ? " on" : ""), onClick: () => set("o2", !s.o2) }, s.o2 ? "mit Sauerstoff" : "Raumluft"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip" + (s.scale2 ? " on" : ""), onClick: () => set("scale2", !s.scale2) }, "SpO2-Skala 2 (hyperkapnisches Risiko)")), /* @__PURE__ */ React.createElement("div", { className: "scparts" }, n.parts.map((r) => /* @__PURE__ */ React.createElement(Row, { key: r[0], r })))), /* @__PURE__ */ React.createElement("div", { className: "scbox" }, /* @__PURE__ */ React.createElement("div", { className: "scbox-h" }, /* @__PURE__ */ React.createElement("b", null, "SOFA"), /* @__PURE__ */ React.createElement("span", { className: "sctotal" }, f.total, " Punkte", f.missing.length ? " \xB7 unvollst\xE4ndig" : "")), /* @__PURE__ */ React.createElement("div", { className: "scgrid" }, /* @__PURE__ */ React.createElement(ScoreField, { label: "p/F", value: s.pf, onChange: (v) => set("pf", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "Thrombozyten", unit: "/nl", value: s.thrombo, onChange: (v) => set("thrombo", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "Bilirubin", unit: "mg/dl", value: s.bili, onChange: (v) => set("bili", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "MAP", unit: "mmHg", value: s.map, onChange: (v) => set("map", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "GCS", hint: "3\u201315", value: s.gcs, onChange: (v) => set("gcs", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "Kreatinin", unit: "mg/dl", value: s.krea, onChange: (v) => set("krea", v) }), /* @__PURE__ */ React.createElement(ScoreField, { label: "Urin / 24 h", unit: "ml", value: s.urin, onChange: (v) => set("urin", v) }), /* @__PURE__ */ React.createElement("label", { className: "scf wide" }, /* @__PURE__ */ React.createElement("span", { className: "scl" }, "Katecholamine"), /* @__PURE__ */ React.createElement("select", { value: s.kat, onChange: (e) => set("kat", Number(e.target.value)) }, KAT_STUFEN.map(([k, l]) => /* @__PURE__ */ React.createElement("option", { key: k, value: k }, l))))), /* @__PURE__ */ React.createElement("div", { className: "chips", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip" + (s.vent ? " on" : ""), onClick: () => set("vent", !s.vent) }, s.vent ? "beatmet / CPAP" : "nicht beatmet")), /* @__PURE__ */ React.createElement("div", { className: "scparts" }, f.parts.map((r) => /* @__PURE__ */ React.createElement(Row, { key: r[0], r })))), /* @__PURE__ */ React.createElement("textarea", { ref: ta, className: "sctext", value: txt, readOnly: true, spellCheck: false }), /* @__PURE__ */ React.createElement("div", { className: "acts" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn ghost left", onClick: () => setS(emptyScores()) }, "Felder leeren"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn ghost", onClick: onClose }, "Schlie\xDFen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn", onClick: () => {
+      save2();
+      onToast("Werte gespeichert");
+    } }, "Speichern"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn primary", onClick: copy }, "Kopieren"))));
   }
   function TopBar({ view, setView, state, hotTotal, todoHigh, onShift, onMenu, theme, onTheme }) {
     const tabs = [["plan", "Zimmerplan"], ["liste", "Meine Schicht"], ["fokus", "Fokus"], ["todo", "To-Do"], ["druck", "Drucken"]];
@@ -1797,7 +2070,7 @@ react-dom/cjs/react-dom.production.min.js:
       const hc = hotCount(p);
       const tag = itsTag(p);
       const sub = p.diagnose || (last(p.problem) || last(p.verlauf) || {}).text;
-      return /* @__PURE__ */ React.createElement("button", { type: "button", key: pl, className: "bed " + (p.mine ? "mine" : "other") + (hc ? " hasHot" : ""), onClick: () => onOpen(p.id) }, /* @__PURE__ */ React.createElement("span", { className: "bed-pl" }, pl), /* @__PURE__ */ React.createElement("span", { className: "bed-name" }, p.name || "ohne Namen"), /* @__PURE__ */ React.createElement("span", { className: "bed-meta" }, tag && /* @__PURE__ */ React.createElement("span", null, "Tag ", tag), hc > 0 && /* @__PURE__ */ React.createElement("span", { className: "cnt" }, hc)), /* @__PURE__ */ React.createElement("span", { className: "bed-sub" }, sub || (p.mine ? "noch kein Verlauf" : "Mini-\xDCberblick")));
+      return /* @__PURE__ */ React.createElement("button", { type: "button", key: pl, className: "bed " + (p.mine ? "mine" : "other") + (hc ? " hasHot" : ""), onClick: () => onOpen(p.id) }, /* @__PURE__ */ React.createElement("span", { className: "bed-pl" }, pl), /* @__PURE__ */ React.createElement("span", { className: "bed-name" }, p.name || "ohne Namen"), /* @__PURE__ */ React.createElement("span", { className: "bed-meta" }, tag && /* @__PURE__ */ React.createElement("span", null, "Tag ", tag), /* @__PURE__ */ React.createElement(VAKBadge, { p, small: true }), hc > 0 && /* @__PURE__ */ React.createElement("span", { className: "cnt" }, hc)), /* @__PURE__ */ React.createElement("span", { className: "bed-sub" }, sub || (p.mine ? "noch kein Verlauf" : "Mini-\xDCberblick")));
     })))));
   }
   function Liste({ pats, shiftStart, onOpen, onToggleHot, onToggleTodo }) {
@@ -1805,7 +2078,7 @@ react-dom/cjs/react-dom.production.min.js:
     const others = pats.filter((p) => !p.mine);
     return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "viewhead" }, /* @__PURE__ */ React.createElement("h1", null, "Meine Schicht"), /* @__PURE__ */ React.createElement("span", { className: "sub" }, mine.length, " / ", MAX_MINE, " Patienten")), mine.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "Noch keine eigenen Patienten \u2014 im Zimmerplan einen Patienten anlegen oder im Patienten \u201EMein Patient\u201C w\xE4hlen."), /* @__PURE__ */ React.createElement("div", { className: "cards" }, mine.map((p) => {
       const hc = hotCount(p);
-      return /* @__PURE__ */ React.createElement("div", { key: p.id, className: "pcard mine" + (hc ? " hasHot" : "") }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "pcard-h", onClick: () => onOpen(p.id), style: { width: "100%" } }, /* @__PURE__ */ React.createElement("span", { className: "bedtag" }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("b", null, p.name || "ohne Namen"), itsTag(p) && /* @__PURE__ */ React.createElement("span", { className: "tag" }, "Tag ", itsTag(p)), p.info && /* @__PURE__ */ React.createElement("span", { className: "tag" }, p.info), hc > 0 && /* @__PURE__ */ React.createElement("span", { className: "cnt" }, hc), uebCount(p) > 0 && /* @__PURE__ */ React.createElement("span", { className: "uebcnt" }, "\u2691 ", uebCount(p))), p.diagnose && /* @__PURE__ */ React.createElement("div", { className: "diag-line" }, p.diagnose), /* @__PURE__ */ React.createElement(VEChips, { list: p.vorerkrankungen }), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("span", { className: "lb" }, "Verlauf"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ React.createElement(Kette, { entries: p.verlauf, compact: true, max: 4, shiftStart }))), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("span", { className: "lb" }, "Problem"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ React.createElement(Kette, { entries: p.problem, compact: true, max: 4, shiftStart }))), p.baustellen.filter((b) => !b.done).length > 0 && /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("span", { className: "lb" }, "Baustellen"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, p.baustellen.filter((b) => !b.done).map((b) => /* @__PURE__ */ React.createElement("div", { key: b.id, className: "task" + (b.hot ? " hot" : ""), style: { padding: "2px 0" } }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "flame" + (b.hot ? " on" : ""), onClick: () => onToggleHot(p.id, b.id), "aria-label": "Hauptbaustelle" }, "!"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "tt", onClick: () => onOpen(p.id) }, b.text))))), volHasData(p) && (() => {
+      return /* @__PURE__ */ React.createElement("div", { key: p.id, className: "pcard mine" + (hc ? " hasHot" : "") }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "pcard-h", onClick: () => onOpen(p.id), style: { width: "100%" } }, /* @__PURE__ */ React.createElement("span", { className: "bedtag" }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("b", null, p.name || "ohne Namen"), itsTag(p) && /* @__PURE__ */ React.createElement("span", { className: "tag" }, "Tag ", itsTag(p)), p.info && /* @__PURE__ */ React.createElement("span", { className: "tag" }, p.info), /* @__PURE__ */ React.createElement(VAKBadge, { p, small: true }), hc > 0 && /* @__PURE__ */ React.createElement("span", { className: "cnt" }, hc), uebCount(p) > 0 && /* @__PURE__ */ React.createElement("span", { className: "uebcnt" }, "\u2691 ", uebCount(p))), p.diagnose && /* @__PURE__ */ React.createElement("div", { className: "diag-line" }, p.diagnose), /* @__PURE__ */ React.createElement(VEChips, { list: p.vorerkrankungen }), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("span", { className: "lb" }, "Verlauf"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ React.createElement(Kette, { entries: p.verlauf, compact: true, max: 4, shiftStart }))), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("span", { className: "lb" }, "Problem"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ React.createElement(Kette, { entries: p.problem, compact: true, max: 4, shiftStart }))), p.baustellen.filter((b) => !b.done).length > 0 && /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("span", { className: "lb" }, "Baustellen"), /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, p.baustellen.filter((b) => !b.done).map((b) => /* @__PURE__ */ React.createElement("div", { key: b.id, className: "task" + (b.hot ? " hot" : ""), style: { padding: "2px 0" } }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "flame" + (b.hot ? " on" : ""), onClick: () => onToggleHot(p.id, b.id), "aria-label": "Hauptbaustelle" }, "!"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "tt", onClick: () => onOpen(p.id) }, b.text))))), volHasData(p) && (() => {
         const vv = volOf(p);
         const w = volWarn(p);
         return /* @__PURE__ */ React.createElement("div", { className: "row volrow" + (w ? " warn" : "") }, /* @__PURE__ */ React.createElement("span", { className: "lb" }, "Volumen"), /* @__PURE__ */ React.createElement("div", { className: "chips" }, vv.status && /* @__PURE__ */ React.createElement("span", { className: "chip static vs st-" + vv.status }, "iv ", VOL_LABEL[vv.status]), vv.pulm && /* @__PURE__ */ React.createElement("span", { className: "chip static vs pu-" + vv.pulm }, "pulm. ", VOL_PULM_LABEL[vv.pulm]), vv.b24.length > 0 && /* @__PURE__ */ React.createElement("span", { className: "chip static vs" }, "24 h ", /* @__PURE__ */ React.createElement("b", null, fmtMl(lastMl(vv.b24)) || vv.b24[vv.b24.length - 1].v)), volZielText(vv) && /* @__PURE__ */ React.createElement("span", { className: "chip static vs ziel" }, "Ziel ", /* @__PURE__ */ React.createElement("b", null, volZielText(vv))), w && /* @__PURE__ */ React.createElement("span", { className: "chip static vs warnchip" }, "\u26A0 ", w)));
@@ -1832,14 +2105,14 @@ react-dom/cjs/react-dom.production.min.js:
       return /* @__PURE__ */ React.createElement("div", { key: n, className: "fgroup" }, /* @__PURE__ */ React.createElement("div", { className: "fgroup-h" }, /* @__PURE__ */ React.createElement("span", { className: "prio p" + n }, PRIO[n]), /* @__PURE__ */ React.createElement("span", { className: "tag" }, grp.length, " Aufgaben")), grp.map(({ p, t }) => /* @__PURE__ */ React.createElement("div", { key: t.id, className: "fitem" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "check", onClick: () => onToggle(p.id, t.id), "aria-label": "Erledigt" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "bedtag", onClick: () => onOpen(p.id) }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("button", { type: "button", className: "what", onClick: () => onOpen(p.id), style: { textAlign: "left" } }, /* @__PURE__ */ React.createElement("b", { style: { marginRight: 8 } }, p.name || "ohne Namen"), t.text), /* @__PURE__ */ React.createElement("span", { className: "src" }, fmtD(t.t), !p.mine ? " \xB7 anderer Arzt" : ""))));
     }));
   }
-  function PatientView({ p, shiftStart, onBack, onEdit, onUpdate, infektioUrl, onBrief }) {
+  function PatientView({ p, shiftStart, onBack, onEdit, onUpdate, infektioUrl, onBrief, onScores }) {
     const setList = (key, sys) => (list) => onUpdate((x) => withList(x, key, sys, list));
     const setFlag = (k, flag) => onUpdate((x) => {
       const cur = x.systeme[k] || { flag: "ok", entries: [] };
       return { ...x, systeme: { ...x.systeme, [k]: { ...cur, flag } } };
     });
     const tag = itsTag(p);
-    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "phead" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "iconbtn", onClick: onBack, "aria-label": "Zur\xFCck" }, "\u2039"), /* @__PURE__ */ React.createElement("span", { className: "bedtag", style: { fontSize: 16 } }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("h1", null, p.name || "ohne Namen"), tag && /* @__PURE__ */ React.createElement("span", { className: "tag" }, "Tag ", tag, " \xB7 Aufnahme ", fmtYMD(p.aufnahme)), p.info && /* @__PURE__ */ React.createElement("span", { className: "tag" }, p.info), /* @__PURE__ */ React.createElement("span", { className: "grow" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "minetoggle" + (p.mine ? " on" : ""), onClick: () => onUpdate((x) => ({ ...x, mine: !x.mine })) }, /* @__PURE__ */ React.createElement("span", { className: "dot" + (p.mine ? " on" : "") }), p.mine ? "Mein Patient" : "Anderer Arzt"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn", onClick: onEdit }, "Stammdaten"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn blue", onClick: onBrief }, "Arztbrief"), /* @__PURE__ */ React.createElement("div", { className: "diag-row" }, /* @__PURE__ */ React.createElement("span", { className: "lb", style: { paddingTop: 12 } }, "Hauptdiagnose"), /* @__PURE__ */ React.createElement(
+    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "phead" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "iconbtn", onClick: onBack, "aria-label": "Zur\xFCck" }, "\u2039"), /* @__PURE__ */ React.createElement("span", { className: "bedtag", style: { fontSize: 16 } }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("h1", null, p.name || "ohne Namen"), tag && /* @__PURE__ */ React.createElement("span", { className: "tag" }, "Tag ", tag, " \xB7 Aufnahme ", fmtYMD(p.aufnahme)), p.info && /* @__PURE__ */ React.createElement("span", { className: "tag" }, p.info), p.gewicht && /* @__PURE__ */ React.createElement("span", { className: "tag" }, p.gewicht, " kg"), /* @__PURE__ */ React.createElement(VAKBadge, { p }), /* @__PURE__ */ React.createElement("span", { className: "grow" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "minetoggle" + (p.mine ? " on" : ""), onClick: () => onUpdate((x) => ({ ...x, mine: !x.mine })) }, /* @__PURE__ */ React.createElement("span", { className: "dot" + (p.mine ? " on" : "") }), p.mine ? "Mein Patient" : "Anderer Arzt"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn", onClick: onEdit }, "Stammdaten"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn", onClick: onScores }, "Scores"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn blue", onClick: onBrief }, "Arztbrief"), /* @__PURE__ */ React.createElement("div", { className: "diag-row" }, /* @__PURE__ */ React.createElement("span", { className: "lb", style: { paddingTop: 12 } }, "Hauptdiagnose"), /* @__PURE__ */ React.createElement(
       "input",
       {
         className: "diag",
@@ -1850,7 +2123,7 @@ react-dom/cjs/react-dom.production.min.js:
           onUpdate((x) => ({ ...x, diagnose: val }));
         }
       }
-    ))), /* @__PURE__ */ React.createElement(VolumenPanel, { p, onUpdate, shiftStart }), /* @__PURE__ */ React.createElement(LabSection, { p, onUpdate, shiftStart }), /* @__PURE__ */ React.createElement("div", { className: "pgrid" }, /* @__PURE__ */ React.createElement("div", { className: "col" }, /* @__PURE__ */ React.createElement(UebergabePanel, { p, onUpdate }), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Vorerkrankungen"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "\xFCber \u201EStammdaten\u201C \xE4ndern")), p.vorerkrankungen.length ? /* @__PURE__ */ React.createElement(VEChips, { list: p.vorerkrankungen }) : /* @__PURE__ */ React.createElement("div", { className: "empty" }, "Keine relevanten Vorerkrankungen erfasst.")), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Verlauf"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Aufnahme \u203A Diagnostik \u203A Diagnose \u2014 im ITS-Verlauf erg\xE4nzen")), /* @__PURE__ */ React.createElement(Timeline, { entries: p.verlauf, onChange: setList("verlauf"), chips: VERLAUF_CHIPS, placeholder: "Neuer Schritt im Verlauf \u2026", mode: "chain", shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Problem & Intervention"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "was ist das Hauptproblem, was wurde gemacht")), /* @__PURE__ */ React.createElement(Timeline, { entries: p.problem, onChange: setList("problem"), chips: PROBLEM_CHIPS, placeholder: "Neue Intervention / Problemstand \u2026", mode: "chain", shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" + (hotBaustellen(p).length ? " hot" : "") }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Baustellen"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "\u201E!\u201C = Hauptbaustelle, erscheint im Fokus")), /* @__PURE__ */ React.createElement(TaskList, { items: p.baustellen, onChange: setList("baustellen"), chips: BAUSTELLE_CHIPS, placeholder: "Neue Baustelle \u2026", hotable: true, shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "To-Do"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "konkrete Aufgaben der Schicht \u2014 Priorit\xE4t antippen zum \xC4ndern")), /* @__PURE__ */ React.createElement(TodoList, { items: p.todos || [], onChange: setList("todos"), chips: TODO_CHIPS, shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Organisation"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Aufkl\xE4rungen, Verlegung, Angeh\xF6rige, Antr\xE4ge")), /* @__PURE__ */ React.createElement(TaskList, { items: p.orga, onChange: setList("orga"), chips: ORGA_CHIPS, placeholder: "Neue Aufgabe \u2026", shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Notiz"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "erscheint auf den Ausdrucken")), /* @__PURE__ */ React.createElement("textarea", { value: p.notiz, placeholder: "Erreichbarkeiten, Besonderheiten, W\xFCnsche \u2026", onChange: (e) => {
+    ))), /* @__PURE__ */ React.createElement(VolumenPanel, { p, onUpdate, shiftStart }), /* @__PURE__ */ React.createElement(LabSection, { p, onUpdate, shiftStart }), /* @__PURE__ */ React.createElement("div", { className: "pgrid" }, /* @__PURE__ */ React.createElement("div", { className: "col" }, /* @__PURE__ */ React.createElement(UebergabePanel, { p, onUpdate }), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Vorerkrankungen"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "\xFCber \u201EStammdaten\u201C \xE4ndern")), p.vorerkrankungen.length ? /* @__PURE__ */ React.createElement(VEChips, { list: p.vorerkrankungen }) : /* @__PURE__ */ React.createElement("div", { className: "empty" }, "Keine relevanten Vorerkrankungen erfasst.")), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Verlauf"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Aufnahme \u203A Diagnostik \u203A Diagnose \u2014 im ITS-Verlauf erg\xE4nzen")), /* @__PURE__ */ React.createElement(Timeline, { entries: p.verlauf, onChange: setList("verlauf"), chips: VERLAUF_CHIPS, placeholder: "Neuer Schritt im Verlauf \u2026", mode: "chain", shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Problem & Intervention"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "was ist das Hauptproblem, was wurde gemacht")), /* @__PURE__ */ React.createElement(Timeline, { entries: p.problem, onChange: setList("problem"), chips: PROBLEM_CHIPS, placeholder: "Neue Intervention / Problemstand \u2026", mode: "chain", shiftStart, pat: p })), /* @__PURE__ */ React.createElement("section", { className: "sec" + (hotBaustellen(p).length ? " hot" : "") }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Baustellen"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "\u201E!\u201C = Hauptbaustelle, erscheint im Fokus")), /* @__PURE__ */ React.createElement(TaskList, { items: p.baustellen, onChange: setList("baustellen"), chips: BAUSTELLE_CHIPS, placeholder: "Neue Baustelle \u2026", hotable: true, shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "To-Do"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "konkrete Aufgaben der Schicht \u2014 Priorit\xE4t antippen zum \xC4ndern")), /* @__PURE__ */ React.createElement(TodoList, { items: p.todos || [], onChange: setList("todos"), chips: TODO_CHIPS, shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Organisation"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Aufkl\xE4rungen, Verlegung, Angeh\xF6rige, Antr\xE4ge")), /* @__PURE__ */ React.createElement(TaskList, { items: p.orga, onChange: setList("orga"), chips: ORGA_CHIPS, placeholder: "Neue Aufgabe \u2026", shiftStart })), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Notiz"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "erscheint auf den Ausdrucken")), /* @__PURE__ */ React.createElement("textarea", { value: p.notiz, placeholder: "Erreichbarkeiten, Besonderheiten, W\xFCnsche \u2026", onChange: (e) => {
       const v = e.target.value;
       onUpdate((x) => ({ ...x, notiz: v }));
     } }))), /* @__PURE__ */ React.createElement("div", { className: "col" }, SYSTEMS.map((s) => /* @__PURE__ */ React.createElement(SystemSection, { key: s.k, s, p, shiftStart, onEntries: setList(null, s.k), onFlag: (f) => setFlag(s.k, f), onUpdate, infektioUrl })))));
@@ -1861,7 +2134,7 @@ react-dom/cjs/react-dom.production.min.js:
     return /* @__PURE__ */ React.createElement("section", { className: "sec sys " + (f !== "ok" ? f : ""), style: { "--sc": s.c } }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("span", { className: "sysbadge" }, /* @__PURE__ */ React.createElement("span", { className: "emo" }, s.e), s.short), /* @__PURE__ */ React.createElement("h2", null, s.name), /* @__PURE__ */ React.createElement("span", { className: "hint" }, s.hint), /* @__PURE__ */ React.createElement("button", { type: "button", className: "flag " + f, onClick: () => setOpen((o) => !o), "aria-expanded": open }, FLAG_LABEL[f])), open && /* @__PURE__ */ React.createElement("div", { className: "flagpick" }, FLAGS.map(([k, l]) => /* @__PURE__ */ React.createElement("button", { type: "button", key: k, className: "flag " + k + (k === f ? " sel" : ""), onClick: () => {
       onFlag(k);
       setOpen(false);
-    } }, l))), s.k === "infekt" && /* @__PURE__ */ React.createElement(InfektPanel, { p, onUpdate, infektioUrl }), /* @__PURE__ */ React.createElement(Timeline, { entries: getList(p, null, s.k), onChange: onEntries, chips: s.chips, placeholder: `${s.short}: neuer Stand \u2026`, mode: "list", shiftStart }));
+    } }, l))), s.k === "infekt" && /* @__PURE__ */ React.createElement(InfektPanel, { p, onUpdate, infektioUrl }), /* @__PURE__ */ React.createElement(Timeline, { entries: getList(p, null, s.k), onChange: onEntries, chips: s.chips, placeholder: `${s.short}: neuer Stand \u2026`, mode: "list", shiftStart, pat: p }));
   }
   const BLANK_SYS = [
     { e: "\u{1F9E0}", l: "Neuro / Schmerz" },
@@ -1911,7 +2184,7 @@ react-dom/cjs/react-dom.production.min.js:
       const labsSorted = [...labs.filter(([, l]) => l.imp), ...labs.filter(([, l]) => !l.imp)];
       const flagged = flaggedItems(p);
       const uebBox = mode === "uebergabe" && (p.uebNotiz && p.uebNotiz.trim() || flagged.length > 0);
-      return /* @__PURE__ */ React.createElement("div", { className: "pp" }, /* @__PURE__ */ React.createElement("div", { className: "pp-h" }, /* @__PURE__ */ React.createElement("span", { className: "zi" }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("span", { className: "nm" }, p.name || "ohne Namen"), /* @__PURE__ */ React.createElement("span", { className: "tg" }, itsTag(p) ? `Tag ${itsTag(p)} \xB7 Aufn. ${fmtYMD(p.aufnahme)}` : "", p.info ? ` \xB7 ${p.info}` : ""), p.diagnose && /* @__PURE__ */ React.createElement("span", { className: "dg" }, p.diagnose), p.vorerkrankungen.length > 0 && /* @__PURE__ */ React.createElement("span", { className: "ve" }, "VE: ", p.vorerkrankungen.join(", "))), uebBox && /* @__PURE__ */ React.createElement("div", { className: "pubox" }, /* @__PURE__ */ React.createElement("div", { className: "pubox-h" }, "\u2691 \xDCbergabe"), p.uebNotiz && p.uebNotiz.trim() && /* @__PURE__ */ React.createElement("div", { className: "pubox-note" }, p.uebNotiz), flagged.map((it, i) => /* @__PURE__ */ React.createElement("div", { key: i, className: "pubox-item" }, /* @__PURE__ */ React.createElement("span", { className: "pubox-k" }, it.kind), it.text))), /* @__PURE__ */ React.createElement("div", { className: "pr" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Verlauf"), /* @__PURE__ */ React.createElement("span", { className: "v" }, /* @__PURE__ */ React.createElement(PrintKette, { entries: p.verlauf, shiftStart: ss, mode: "all", maxAll: 6 }))), /* @__PURE__ */ React.createElement("div", { className: "pr" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Problem"), /* @__PURE__ */ React.createElement("span", { className: "v" }, /* @__PURE__ */ React.createElement(PrintKette, { entries: p.problem, shiftStart: ss, mode: "all", maxAll: 5 }))), openB.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "pr bs" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Baustellen"), /* @__PURE__ */ React.createElement("span", { className: "v" }, [...openB.filter((b) => b.hot), ...openB.filter((b) => !b.hot)].map((b) => /* @__PURE__ */ React.createElement("span", { key: b.id, className: b.hot ? "h" : "o" }, b.text)))), volHasData(p) && (() => {
+      return /* @__PURE__ */ React.createElement("div", { className: "pp" }, /* @__PURE__ */ React.createElement("div", { className: "pp-h" }, /* @__PURE__ */ React.createElement("span", { className: "zi" }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("span", { className: "nm" }, p.name || "ohne Namen"), /* @__PURE__ */ React.createElement("span", { className: "tg" }, itsTag(p) ? `Tag ${itsTag(p)} \xB7 Aufn. ${fmtYMD(p.aufnahme)}` : "", p.info ? ` \xB7 ${p.info}` : ""), hasVAK(p) && /* @__PURE__ */ React.createElement("span", { className: "pvak" }, "VAK"), p.diagnose && /* @__PURE__ */ React.createElement("span", { className: "dg" }, p.diagnose), veVisible(p.vorerkrankungen).length > 0 && /* @__PURE__ */ React.createElement("span", { className: "ve" }, "VE: ", veVisible(p.vorerkrankungen).join(", "))), uebBox && /* @__PURE__ */ React.createElement("div", { className: "pubox" }, /* @__PURE__ */ React.createElement("div", { className: "pubox-h" }, "\u2691 \xDCbergabe"), p.uebNotiz && p.uebNotiz.trim() && /* @__PURE__ */ React.createElement("div", { className: "pubox-note" }, p.uebNotiz), flagged.map((it, i) => /* @__PURE__ */ React.createElement("div", { key: i, className: "pubox-item" }, /* @__PURE__ */ React.createElement("span", { className: "pubox-k" }, it.kind), it.text))), /* @__PURE__ */ React.createElement("div", { className: "pr" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Verlauf"), /* @__PURE__ */ React.createElement("span", { className: "v" }, /* @__PURE__ */ React.createElement(PrintKette, { entries: p.verlauf, shiftStart: ss, mode: "all", maxAll: 6 }))), /* @__PURE__ */ React.createElement("div", { className: "pr" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Problem"), /* @__PURE__ */ React.createElement("span", { className: "v" }, /* @__PURE__ */ React.createElement(PrintKette, { entries: p.problem, shiftStart: ss, mode: "all", maxAll: 5 }))), openB.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "pr bs" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Baustellen"), /* @__PURE__ */ React.createElement("span", { className: "v" }, [...openB.filter((b) => b.hot), ...openB.filter((b) => !b.hot)].map((b) => /* @__PURE__ */ React.createElement("span", { key: b.id, className: b.hot ? "h" : "o" }, b.text)))), volHasData(p) && (() => {
         const vv = volOf(p);
         const w = volWarn(p);
         const parts = [];
@@ -1930,7 +2203,7 @@ react-dom/cjs/react-dom.production.min.js:
         return td.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "pr pl ptodo" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "To-Do"), /* @__PURE__ */ React.createElement("span", { className: "v" }, td.map((t) => /* @__PURE__ */ React.createElement("span", { key: t.id, className: t.done ? "d" : "o p" + t.prio }, t.text))));
       })(), orga.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "pr pl" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Orga"), /* @__PURE__ */ React.createElement("span", { className: "v" }, orga.map((o) => /* @__PURE__ */ React.createElement("span", { key: o.id, className: o.done ? "d" : "o" }, o.text)))), p.notiz && /* @__PURE__ */ React.createElement("div", { className: "pr" }, /* @__PURE__ */ React.createElement("span", { className: "l" }, "Notiz"), /* @__PURE__ */ React.createElement("span", { className: "v" }, p.notiz)));
     };
-    return /* @__PURE__ */ React.createElement("div", { className: "paper" }, /* @__PURE__ */ React.createElement("div", { className: "ph" }, /* @__PURE__ */ React.createElement("h1", null, title), /* @__PURE__ */ React.createElement("span", { className: "meta" }, meta)), state.shiftNote && /* @__PURE__ */ React.createElement("div", { className: "pnote" }, state.shiftNote), mine.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "pempty" }, "Keine eigenen Patienten markiert."), mine.map((p) => /* @__PURE__ */ React.createElement(Block, { key: p.id, p })), withOthers && others.length > 0 && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "psec" }, "Weitere Patienten der Station"), /* @__PURE__ */ React.createElement("table", { className: "ptab" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", null, "Zi"), /* @__PURE__ */ React.createElement("th", null, "Name"), /* @__PURE__ */ React.createElement("th", null, "Hauptdiagnose"), /* @__PURE__ */ React.createElement("th", null, "Aktuell"), /* @__PURE__ */ React.createElement("th", null, "Baustelle"))), /* @__PURE__ */ React.createElement("tbody", null, others.map((p) => /* @__PURE__ */ React.createElement("tr", { key: p.id }, /* @__PURE__ */ React.createElement("td", null, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("td", null, p.name || "\u2014"), /* @__PURE__ */ React.createElement("td", null, p.diagnose || (last(p.verlauf) || {}).text || "\u2014"), /* @__PURE__ */ React.createElement("td", null, (last(p.problem) || {}).text || "\u2014"), /* @__PURE__ */ React.createElement("td", null, p.baustellen.filter((b) => !b.done).map((b) => (b.hot ? "\u25A0 " : "\u25A1 ") + b.text).join("; ") || "\u2014")))))), /* @__PURE__ */ React.createElement("div", { className: "pfoot" }, /* @__PURE__ */ React.createElement("span", null, mode === "uebergabe" ? "Unterstrichen = neu in dieser Schicht \xB7 \u2691 f\xFCr die \xDCbergabe markiert \xB7 \u25A0 Baustelle \xB7 \u2197 gebessert \xB7 \u2605 wichtiges Labor \xB7 \u203C To-Do hoch \xB7 Organsysteme: nur letzter Stand + Neues" : "\u25A0 Hauptbaustelle \xB7 \u25A1 Baustelle \xB7 \u2197 gebessert \xB7 \u2605 wichtiges Labor \xB7 \u203C To-Do hoch \xB7 \u2610 offen"), /* @__PURE__ */ React.createElement("span", null, "Arbeitsdokument, keine Patientenakte. Aliasnamen.")));
+    return /* @__PURE__ */ React.createElement("div", { className: "paper" }, /* @__PURE__ */ React.createElement("div", { className: "ph" }, /* @__PURE__ */ React.createElement("h1", null, title), /* @__PURE__ */ React.createElement("span", { className: "meta" }, meta)), state.shiftNote && /* @__PURE__ */ React.createElement("div", { className: "pnote" }, state.shiftNote), mine.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "pempty" }, "Keine eigenen Patienten markiert."), mine.map((p) => /* @__PURE__ */ React.createElement(Block, { key: p.id, p })), withOthers && others.length > 0 && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "psec" }, "Weitere Patienten der Station"), /* @__PURE__ */ React.createElement("table", { className: "ptab" }, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", null, "Zi"), /* @__PURE__ */ React.createElement("th", null, "Name"), /* @__PURE__ */ React.createElement("th", null, "Hauptdiagnose"), /* @__PURE__ */ React.createElement("th", null, "Aktuell"), /* @__PURE__ */ React.createElement("th", null, "Baustelle"))), /* @__PURE__ */ React.createElement("tbody", null, others.map((p) => /* @__PURE__ */ React.createElement("tr", { key: p.id }, /* @__PURE__ */ React.createElement("td", null, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("td", null, p.name || "\u2014"), /* @__PURE__ */ React.createElement("td", null, p.diagnose || (last(p.verlauf) || {}).text || "\u2014"), /* @__PURE__ */ React.createElement("td", null, (last(p.problem) || {}).text || "\u2014"), /* @__PURE__ */ React.createElement("td", null, p.baustellen.filter((b) => !b.done).map((b) => (b.hot ? "\u25A0 " : "\u25A1 ") + b.text).join("; ") || "\u2014")))))), /* @__PURE__ */ React.createElement("div", { className: "pfoot" }, /* @__PURE__ */ React.createElement("span", null, mode === "uebergabe" ? "Unterstrichen = neu in dieser Schicht \xB7 \u2691 f\xFCr die \xDCbergabe markiert \xB7 \u25A0 Baustelle \xB7 \u2197 gebessert \xB7 fett = wichtig \xB7 \u203C To-Do hoch \xB7 Organsysteme: nur letzter Stand + Neues" : "\u25A0 Hauptbaustelle \xB7 \u25A1 Baustelle \xB7 \u2197 gebessert \xB7 fett = wichtig \xB7 \u203C To-Do hoch \xB7 \u2610 offen"), /* @__PURE__ */ React.createElement("span", null, "Arbeitsdokument, keine Patientenakte. Aliasnamen.")));
   }
   function Druck({ state, pats }) {
     const [mode, setMode] = useState("schicht");
@@ -1942,23 +2215,6 @@ react-dom/cjs/react-dom.production.min.js:
     const blankPats = blankCount > 0 ? Array.from({ length: blankCount }).map(() => null) : mine.length ? mine : Array.from({ length: perPage }).map(() => null);
     return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "druck-controls no-print" }, /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: mode === "schicht" ? "on" : "", onClick: () => setMode("schicht") }, "Schichtliste"), /* @__PURE__ */ React.createElement("button", { type: "button", className: mode === "uebergabe" ? "on" : "", onClick: () => setMode("uebergabe") }, "\xDCbergabe"), /* @__PURE__ */ React.createElement("button", { type: "button", className: mode === "blanko" ? "on" : "", onClick: () => setMode("blanko") }, "Blanko")), mode === "blanko" ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "seg" }, [3, 4, 5].map((n) => /* @__PURE__ */ React.createElement("button", { type: "button", key: n, className: perPage === n ? "on" : "", onClick: () => setPerPage(n) }, n, "/Seite"))), /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip" + (blankData ? " on" : ""), onClick: () => setBlankData(!blankData), style: { minHeight: 44 } }, "Zimmer, Name und Diagnose vorausf\xFCllen"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: blankCount === 0 ? "on" : "", onClick: () => setBlankCount(0) }, "meine Patienten (", mine.length || perPage, ")"), [4, 8, 10].map((n) => /* @__PURE__ */ React.createElement("button", { type: "button", key: n, className: blankCount === n ? "on" : "", onClick: () => setBlankCount(n) }, n, " leer")))) : /* @__PURE__ */ React.createElement("button", { type: "button", className: "chip" + (others ? " on" : ""), onClick: () => setOthers(!others), style: { minHeight: 44 } }, "weitere Patienten als Tabelle"), /* @__PURE__ */ React.createElement("span", { className: "grow", style: { flex: 1 } }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn primary", onClick: () => window.print() }, "Drucken / als PDF")), mode === "uebergabe" && !state.shiftStart && /* @__PURE__ */ React.createElement("div", { className: "banner no-print" }, "Keine Schicht gestartet \u2014 ohne Startzeit kann nichts als \u201Eneu in dieser Schicht\u201C markiert werden."), mode === "blanko" ? /* @__PURE__ */ React.createElement(BlankDoc, { patients: blankPats, perPage, withData: blankData && blankCount === 0 }) : /* @__PURE__ */ React.createElement(PrintDoc, { state, pats, mode, withOthers: others }));
   }
-  function copyText(text, ta) {
-    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text).then(() => true).catch(() => fallbackCopy(ta));
-    return Promise.resolve(fallbackCopy(ta));
-  }
-  function fallbackCopy(ta) {
-    try {
-      if (!ta) return false;
-      ta.focus();
-      ta.select();
-      ta.setSelectionRange(0, ta.value.length);
-      const ok = document.execCommand("copy");
-      ta.setSelectionRange(0, 0);
-      return ok;
-    } catch (e) {
-      return false;
-    }
-  }
   function BriefView({ p, meds, onMeds, onBack, onUpdate, onToast }) {
     const saved = p.brief || {};
     const [template, setTemplate] = useState(saved.template || "innere");
@@ -1966,6 +2222,9 @@ react-dom/cjs/react-dom.production.min.js:
     const [bausteine, setBausteine] = useState(saved.bausteine || (infektHasData(p) ? ["infekt"] : []));
     const [medSel, setMedSel] = useState(saved.meds || meds.filter((m) => m.def.includes(saved.template || "innere")).map((m) => m.k));
     const [text, setText] = useState("");
+    const [tag, setTag] = useState("");
+    const [tagEdit, setTagEdit] = useState(false);
+    const taTag = useRef(null);
     const [edited, setEdited] = useState(false);
     const [editMeds, setEditMeds] = useState(false);
     const [newMed, setNewMed] = useState("");
@@ -1976,6 +2235,9 @@ react-dom/cjs/react-dom.production.min.js:
       setEdited(false);
     }, [template, genus, bausteine.join(","), medSel.join(","), meds, p]);
     useEffect(() => {
+      if (!tagEdit) setTag(buildTagesnotiz(p));
+    }, [p, tagEdit]);
+    useEffect(() => {
       onUpdate((x) => ({ ...x, brief: { template, genus, bausteine, meds: medSel } }));
     }, [template, genus, bausteine.join(","), medSel.join(",")]);
     const pickTemplate = (k) => {
@@ -1985,6 +2247,7 @@ react-dom/cjs/react-dom.production.min.js:
     const toggleB = (k) => setBausteine((b) => b.includes(k) ? b.filter((x) => x !== k) : [...b, k]);
     const toggleM = (k) => setMedSel((s) => s.includes(k) ? s.filter((x) => x !== k) : [...s, k]);
     const copy = () => copyText(text, ta.current).then((ok) => onToast(ok ? "Brieftext in die Zwischenablage kopiert" : "Kopieren nicht m\xF6glich \u2014 Text markieren und manuell kopieren"));
+    const copyTag = () => copyText(tag, taTag.current).then((ok) => onToast(ok ? "Tageseintrag kopiert" : "Kopieren nicht m\xF6glich \u2014 Text markieren und manuell kopieren"));
     const updMed = (k, txt) => onMeds(meds.map((m) => m.k === k ? { ...m, txt } : m));
     const delMed = (k) => {
       onMeds(meds.filter((m) => m.k !== k));
@@ -1998,7 +2261,13 @@ react-dom/cjs/react-dom.production.min.js:
       setMedSel((s) => [...s, k]);
       setNewMed("");
     };
-    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "phead" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "iconbtn", onClick: onBack, "aria-label": "Zur\xFCck" }, "\u2039"), /* @__PURE__ */ React.createElement("span", { className: "bedtag", style: { fontSize: 16 } }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("h1", null, "Arztbrief \u2014 ", p.name || "ohne Namen"), /* @__PURE__ */ React.createElement("span", { className: "tag" }, "Textbausteine zum Kopieren in den Verlegungsbrief"), /* @__PURE__ */ React.createElement("span", { className: "grow" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn primary", onClick: copy }, "Text kopieren")), /* @__PURE__ */ React.createElement("div", { className: "briefgrid" }, /* @__PURE__ */ React.createElement("div", { className: "col" }, /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Vorlage")), /* @__PURE__ */ React.createElement("div", { className: "seg", style: { display: "flex" } }, BRIEF_TEMPLATES.map((t) => /* @__PURE__ */ React.createElement("button", { type: "button", key: t.k, className: template === t.k ? "on" : "", style: { flex: 1 }, onClick: () => pickTemplate(t.k) }, t.name.replace("Interne Verlegung \u2014 ", "")))), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 10, alignItems: "center" } }, /* @__PURE__ */ React.createElement("span", { className: "lb", style: { paddingTop: 0 } }, "Genus"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: genus === "m" ? "on" : "", onClick: () => setGenus("m") }, "der Patient"), /* @__PURE__ */ React.createElement("button", { type: "button", className: genus === "w" ? "on" : "", onClick: () => setGenus("w") }, "die Patientin")))), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Bausteine"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Reihenfolge im Brief: Verlauf \u2192 Sepsis/Antiinfektiva \u2192 Katecholamine \u2192 Beatmung \u2192 NIV \u2192 CiCA \u2192 Transfusion \u2192 Delir; \u201ESepsis\u201C enth\xE4lt die Antiinfektiva schon")), /* @__PURE__ */ React.createElement("div", { className: "chips" }, BAUSTEINE.map((b) => /* @__PURE__ */ React.createElement("button", { type: "button", key: b.k, className: "chip" + (bausteine.includes(b.k) ? " on" : ""), onClick: () => toggleB(b.k) }, b.name))), /* @__PURE__ */ React.createElement("div", { className: "tag", style: { marginTop: 8 } }, "Eckige Klammern [x] sind Platzhalter, die du im Brief erg\xE4nzt. Daten aus der Akte (Diagnose, Verlauf, Labor, Antiinfektiva, Liegetage) werden automatisch eingesetzt.")), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Medikation bei Verlegung"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Hausstandard \u2014 antippen zum Ausw\xE4hlen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm ghost", onClick: () => setEditMeds((e) => !e) }, editMeds ? "Fertig" : "Liste anpassen")), meds.map((m) => /* @__PURE__ */ React.createElement("div", { key: m.k, className: "task medrow" + (medSel.includes(m.k) ? " sel" : "") }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "check" + (medSel.includes(m.k) ? " on" : ""), onClick: () => toggleM(m.k), "aria-label": "Ausw\xE4hlen" }, medSel.includes(m.k) ? "\u2713" : ""), editMeds ? /* @__PURE__ */ React.createElement("input", { value: m.txt, onChange: (e) => updMed(m.k, e.target.value) }) : /* @__PURE__ */ React.createElement("button", { type: "button", className: "tt", onClick: () => toggleM(m.k) }, m.txt, m.hint && /* @__PURE__ */ React.createElement("span", { className: "tag" }, " \xB7 ", m.hint)), editMeds && /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm danger ghost", onClick: () => delMed(m.k), "aria-label": "Entfernen" }, "\xD7"))), editMeds && /* @__PURE__ */ React.createElement("div", { className: "addrow", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement("input", { value: newMed, placeholder: "Neue Zeile, z. B. Bisoprolol 2,5 mg p.o. 1-0-0", onChange: (e) => setNewMed(e.target.value), onKeyDown: (e) => {
+    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "phead" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "iconbtn", onClick: onBack, "aria-label": "Zur\xFCck" }, "\u2039"), /* @__PURE__ */ React.createElement("span", { className: "bedtag", style: { fontSize: 16 } }, p.zimmer, " ", p.platz), /* @__PURE__ */ React.createElement("h1", null, "Arztbrief \u2014 ", p.name || "ohne Namen"), /* @__PURE__ */ React.createElement("span", { className: "tag" }, "Textbausteine zum Kopieren in den Verlegungsbrief"), /* @__PURE__ */ React.createElement("span", { className: "grow" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn primary", onClick: copy }, "Text kopieren")), /* @__PURE__ */ React.createElement("section", { className: "sec tagesnotiz" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("span", { className: "sysbadge", style: { "--sc": "var(--grn)" } }, "Tag"), /* @__PURE__ */ React.createElement("h2", null, "Tageseintrag"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "kurze Verlaufsnotiz von Kopf bis Fu\xDF \u2014 nur zum Kopieren, steht auf keinem Ausdruck"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm", onClick: () => {
+      setTagEdit(false);
+      setTag(buildTagesnotiz(p));
+    } }, "Neu erzeugen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm primary", onClick: copyTag }, "Kopieren")), /* @__PURE__ */ React.createElement("textarea", { ref: taTag, className: "tagtext", value: tag, onChange: (e) => {
+      setTag(e.target.value);
+      setTagEdit(true);
+    }, spellCheck: false })), /* @__PURE__ */ React.createElement("div", { className: "briefgrid" }, /* @__PURE__ */ React.createElement("div", { className: "col" }, /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Vorlage")), /* @__PURE__ */ React.createElement("div", { className: "seg", style: { display: "flex" } }, BRIEF_TEMPLATES.map((t) => /* @__PURE__ */ React.createElement("button", { type: "button", key: t.k, className: template === t.k ? "on" : "", style: { flex: 1 }, onClick: () => pickTemplate(t.k) }, t.name.replace("Interne Verlegung \u2014 ", "")))), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 10, alignItems: "center" } }, /* @__PURE__ */ React.createElement("span", { className: "lb", style: { paddingTop: 0 } }, "Genus"), /* @__PURE__ */ React.createElement("div", { className: "seg" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: genus === "m" ? "on" : "", onClick: () => setGenus("m") }, "der Patient"), /* @__PURE__ */ React.createElement("button", { type: "button", className: genus === "w" ? "on" : "", onClick: () => setGenus("w") }, "die Patientin")))), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Bausteine"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Reihenfolge im Brief: Verlauf \u2192 Sepsis/Antiinfektiva \u2192 Katecholamine \u2192 Beatmung \u2192 NIV \u2192 CiCA \u2192 Transfusion \u2192 Delir; \u201ESepsis\u201C enth\xE4lt die Antiinfektiva schon")), /* @__PURE__ */ React.createElement("div", { className: "chips" }, BAUSTEINE.map((b) => /* @__PURE__ */ React.createElement("button", { type: "button", key: b.k, className: "chip" + (bausteine.includes(b.k) ? " on" : ""), onClick: () => toggleB(b.k) }, b.name))), /* @__PURE__ */ React.createElement("div", { className: "tag", style: { marginTop: 8 } }, "Eckige Klammern [x] sind Platzhalter, die du im Brief erg\xE4nzt. Daten aus der Akte (Diagnose, Verlauf, Labor, Antiinfektiva, Liegetage) werden automatisch eingesetzt.")), /* @__PURE__ */ React.createElement("section", { className: "sec" }, /* @__PURE__ */ React.createElement("div", { className: "sec-h" }, /* @__PURE__ */ React.createElement("h2", null, "Medikation bei Verlegung"), /* @__PURE__ */ React.createElement("span", { className: "hint" }, "Hausstandard \u2014 antippen zum Ausw\xE4hlen"), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm ghost", onClick: () => setEditMeds((e) => !e) }, editMeds ? "Fertig" : "Liste anpassen")), meds.map((m) => /* @__PURE__ */ React.createElement("div", { key: m.k, className: "task medrow" + (medSel.includes(m.k) ? " sel" : "") }, /* @__PURE__ */ React.createElement("button", { type: "button", className: "check" + (medSel.includes(m.k) ? " on" : ""), onClick: () => toggleM(m.k), "aria-label": "Ausw\xE4hlen" }, medSel.includes(m.k) ? "\u2713" : ""), editMeds ? /* @__PURE__ */ React.createElement("input", { value: m.txt, onChange: (e) => updMed(m.k, e.target.value) }) : /* @__PURE__ */ React.createElement("button", { type: "button", className: "tt", onClick: () => toggleM(m.k) }, m.txt, m.hint && /* @__PURE__ */ React.createElement("span", { className: "tag" }, " \xB7 ", m.hint)), editMeds && /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm danger ghost", onClick: () => delMed(m.k), "aria-label": "Entfernen" }, "\xD7"))), editMeds && /* @__PURE__ */ React.createElement("div", { className: "addrow", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement("input", { value: newMed, placeholder: "Neue Zeile, z. B. Bisoprolol 2,5 mg p.o. 1-0-0", onChange: (e) => setNewMed(e.target.value), onKeyDown: (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
         addMed();
@@ -2058,6 +2327,7 @@ react-dom/cjs/react-dom.production.min.js:
     const [view, setView] = useState("plan");
     const [openId, setOpenId] = useState(null);
     const [briefId, setBriefId] = useState(null);
+    const [scoreId, setScoreId] = useState(null);
     const [editor, setEditor] = useState(null);
     const [menu, setMenu] = useState(false);
     const [shiftDlg, setShiftDlg] = useState(false);
@@ -2274,7 +2544,7 @@ react-dom/cjs/react-dom.production.min.js:
       setMenu(false);
       if (checkRef.current) checkRef.current(false, true);
       else setToast("Update-Pr\xFCfung nur in der installierten Web-App");
-    } }, "Nach Update suchen ", /* @__PURE__ */ React.createElement("span", { className: "tag" }, "v", APP_VERSION)), /* @__PURE__ */ React.createElement("div", { className: "sep" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "danger", onClick: wipe }, "Alles l\xF6schen"), /* @__PURE__ */ React.createElement("div", { className: "foot" }, "beste Liste ever \xB7 v", APP_VERSION, " \xB7 Daten nur auf diesem Ger\xE4t"))), /* @__PURE__ */ React.createElement("input", { ref: fileRef, type: "file", accept: "application/json,.json", style: { display: "none" }, onChange: importJSON }), /* @__PURE__ */ React.createElement("main", null, update && /* @__PURE__ */ React.createElement("div", { className: "banner updbar" }, /* @__PURE__ */ React.createElement("span", null, "Version ", update.version, " ist verf\xFCgbar (installiert: ", APP_VERSION, "). Deine Daten bleiben erhalten."), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm primary", onClick: () => location.reload() }, "Jetzt aktualisieren")), !update && updateReady && /* @__PURE__ */ React.createElement("div", { className: "banner updbar" }, /* @__PURE__ */ React.createElement("span", null, "Neue Version geladen."), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm", onClick: () => location.reload() }, "Neu laden")), !storageOk && /* @__PURE__ */ React.createElement("div", { className: "banner" }, "Speichern nicht m\xF6glich (kein lokaler Speicher). Daten gehen beim Schlie\xDFen verloren \u2014 Sicherung exportieren."), briefPat ? /* @__PURE__ */ React.createElement(BriefView, { p: briefPat, meds, onMeds: setMeds, onBack: () => setBriefId(null), onUpdate: (fn) => updPatient(briefPat.id, fn), onToast: setToast }) : current ? /* @__PURE__ */ React.createElement(PatientView, { p: current, shiftStart: state.shiftStart, onBack: back, onEdit: () => setEditor(current), onUpdate: (fn) => updPatient(current.id, fn), infektioUrl, onBrief: () => setBriefId(current.id) }) : view === "plan" ? /* @__PURE__ */ React.createElement(Zimmerplan, { pats, onOpen: openPatient, onAdd: (z, pl) => setEditor(newPatient({ zimmer: z, platz: pl, mine: mineCount < MAX_MINE })) }) : view === "liste" ? /* @__PURE__ */ React.createElement(Liste, { pats, shiftStart: state.shiftStart, onOpen: openPatient, onToggleHot: toggleHot, onToggleTodo: toggleTodo }) : view === "fokus" ? /* @__PURE__ */ React.createElement(Fokus, { pats, onOpen: openPatient, onDone: doneB, onUnhot: toggleHot }) : view === "todo" ? /* @__PURE__ */ React.createElement(TodoView, { pats, onOpen: openPatient, onToggle: toggleTodo }) : /* @__PURE__ */ React.createElement(Druck, { state, pats })), editor && /* @__PURE__ */ React.createElement(PatientEditor, { patient: editor, allPatients: pats, mineCount, onSave: savePatient, onClose: () => setEditor(null), onDischarge: discharge }), shiftDlg && /* @__PURE__ */ React.createElement(ShiftDialog, { state, onChange: setState, onClose: () => setShiftDlg(false) }), archiveDlg && /* @__PURE__ */ React.createElement(
+    } }, "Nach Update suchen ", /* @__PURE__ */ React.createElement("span", { className: "tag" }, "v", APP_VERSION)), /* @__PURE__ */ React.createElement("div", { className: "sep" }), /* @__PURE__ */ React.createElement("button", { type: "button", className: "danger", onClick: wipe }, "Alles l\xF6schen"), /* @__PURE__ */ React.createElement("div", { className: "foot" }, "beste Liste ever \xB7 v", APP_VERSION, " \xB7 Daten nur auf diesem Ger\xE4t"))), /* @__PURE__ */ React.createElement("input", { ref: fileRef, type: "file", accept: "application/json,.json", style: { display: "none" }, onChange: importJSON }), /* @__PURE__ */ React.createElement("main", null, update && /* @__PURE__ */ React.createElement("div", { className: "banner updbar" }, /* @__PURE__ */ React.createElement("span", null, "Version ", update.version, " ist verf\xFCgbar (installiert: ", APP_VERSION, "). Deine Daten bleiben erhalten."), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm primary", onClick: () => location.reload() }, "Jetzt aktualisieren")), !update && updateReady && /* @__PURE__ */ React.createElement("div", { className: "banner updbar" }, /* @__PURE__ */ React.createElement("span", null, "Neue Version geladen."), /* @__PURE__ */ React.createElement("button", { type: "button", className: "btn sm", onClick: () => location.reload() }, "Neu laden")), !storageOk && /* @__PURE__ */ React.createElement("div", { className: "banner" }, "Speichern nicht m\xF6glich (kein lokaler Speicher). Daten gehen beim Schlie\xDFen verloren \u2014 Sicherung exportieren."), briefPat ? /* @__PURE__ */ React.createElement(BriefView, { p: briefPat, meds, onMeds: setMeds, onBack: () => setBriefId(null), onUpdate: (fn) => updPatient(briefPat.id, fn), onToast: setToast }) : current ? /* @__PURE__ */ React.createElement(PatientView, { p: current, shiftStart: state.shiftStart, onBack: back, onEdit: () => setEditor(current), onUpdate: (fn) => updPatient(current.id, fn), infektioUrl, onBrief: () => setBriefId(current.id), onScores: () => setScoreId(current.id) }) : view === "plan" ? /* @__PURE__ */ React.createElement(Zimmerplan, { pats, onOpen: openPatient, onAdd: (z, pl) => setEditor(newPatient({ zimmer: z, platz: pl, mine: mineCount < MAX_MINE })) }) : view === "liste" ? /* @__PURE__ */ React.createElement(Liste, { pats, shiftStart: state.shiftStart, onOpen: openPatient, onToggleHot: toggleHot, onToggleTodo: toggleTodo }) : view === "fokus" ? /* @__PURE__ */ React.createElement(Fokus, { pats, onOpen: openPatient, onDone: doneB, onUnhot: toggleHot }) : view === "todo" ? /* @__PURE__ */ React.createElement(TodoView, { pats, onOpen: openPatient, onToggle: toggleTodo }) : /* @__PURE__ */ React.createElement(Druck, { state, pats })), scoreId && state.patients[scoreId] && /* @__PURE__ */ React.createElement(ScorePanel, { p: state.patients[scoreId], onUpdate: (fn) => updPatient(scoreId, fn), onClose: () => setScoreId(null), onToast: setToast }), editor && /* @__PURE__ */ React.createElement(PatientEditor, { patient: editor, allPatients: pats, mineCount, onSave: savePatient, onClose: () => setEditor(null), onDischarge: discharge }), shiftDlg && /* @__PURE__ */ React.createElement(ShiftDialog, { state, onChange: setState, onClose: () => setShiftDlg(false) }), archiveDlg && /* @__PURE__ */ React.createElement(
       ArchiveDialog,
       {
         archive: state.archive,
