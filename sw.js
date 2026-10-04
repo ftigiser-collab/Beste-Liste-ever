@@ -1,6 +1,6 @@
 /* Service Worker — beste-liste
    Update: VERSION hochzählen, dann index.html hochladen. */
-const VERSION = 'beste-liste-v24';
+const VERSION = 'beste-liste-v25';
 const CORE = [
   './',
   './index.html',
@@ -21,7 +21,7 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
-      .then(ks => Promise.all(ks.filter(k => k !== VERSION).map(k => caches.delete(k))))
+      .then(ks => Promise.all(ks.filter(k => k.startsWith('beste-liste-') && k !== VERSION).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
